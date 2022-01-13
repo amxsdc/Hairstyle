@@ -1,5 +1,5 @@
 {
-    "name" : "音符应用",
+    "name" : "3D焕发",
     "appid" : "__UNI__EBBC650",
     "description" : "",
     "versionName" : "1.5.0",
@@ -60,14 +60,17 @@
             },
             "icons" : {
                 "android" : {
-                    "hdpi" : "E:/大学文档专栏/大学作业文档/微机专栏/大二实训/CSI_Voicepro/static/allArticle-Select.png",
-                    "xhdpi" : "E:/大学文档专栏/大学作业文档/微机专栏/大二实训/CSI_Voicepro/static/allArticle-Select.png",
-                    "xxhdpi" : "E:/大学文档专栏/大学作业文档/微机专栏/大二实训/CSI_Voicepro/static/allArticle-Select.png",
-                    "xxxhdpi" : "E:/大学文档专栏/大学作业文档/微机专栏/大二实训/CSI_Voicepro/static/allArticle-Select.png"
+                    "hdpi" : "static/logo.png",
+                    "xhdpi" : "static/logo.png",
+                    "xxhdpi" : "static/logo.png",
+                    "xxxhdpi" : "static/logo.png"
                 },
                 "ios" : {
-                    "appstore" : "E:/大学文档专栏/大学作业文档/微机专栏/大二实训/CSI_Voicepro/static/allArticle-Select.png"
+                    "appstore" : "static/logo.png"
                 }
+            },
+            "splashscreen" : {
+                "androidStyle" : "common"
             }
         }
     },
