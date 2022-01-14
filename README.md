@@ -22,6 +22,13 @@
   最后，如果有更好的开源项目可以使用，本项目可以舍弃。
   
   
+0、开屏图片（IOS上架APPStore不可用）和图标、应用名称可配置
+![EE3B78719AAEBABD017C6ED9F8233282](https://user-images.githubusercontent.com/81294772/149462141-001aee62-681b-433e-b63b-3269a2cd091d.jpg)
+
+
+![FB2C1DD73B504703EE526DB725938144](https://user-images.githubusercontent.com/81294772/149462153-dece364f-94b4-4e7e-8965-6859e9c49518.jpg)
+
+  
 1、实现注册登录，其中有注册，找回密码等，现在登录默认账户为：admin，密码为：123456
 
 ![image](https://user-images.githubusercontent.com/81294772/149372040-93af2a8a-ca74-458c-b329-095bd791bdd6.png)
