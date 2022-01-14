@@ -138,10 +138,10 @@
                     // "target":"http://192.168.0.123:8000",
                     // "target":"http://192.168.1.106:8000",
                     "changeOrigin" : true, //是否跨域
-                    "secure" : false, // 设置支持https协议的代理
+                    "secure" : true, // 设置支持https协议的代理
 					"pathRewrite": { //匹配请求路径里面有 /api 会替换成https://www.test.com
 						// 举例：/api/api/user => https://www.test.com/api/user
-						"^/api": "/api"
+						"^/api": ""
 					}
                 } 
             }

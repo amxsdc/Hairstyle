@@ -183,10 +183,10 @@
 					// },
 					// data:{userName:_this.userName,password:_this.userPassword}, 
 					success: (res) => {
-						console.log("请求返回测试："+res.data.data.name+" "+res.data.data.password)
+						console.log(res)
 						// if(!res.data.data.status){
 						// 	_this.$u.toast("登录失败")
-						// }
+						// } 
 						// else{
 						// 	// console.log(res)
 						// 	uni.setStorage({

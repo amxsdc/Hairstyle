@@ -111,7 +111,18 @@
         }
         ,{
             "path" : "pages/navigate_page/Home/measuringFace/measuringFace",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"脸型分析",
+				// "navigationStyle":"custom",
+				"navigationBarBackgroundColor":"rgba(0,0,0,0)",
+				"navigationBarTextStyle":"white",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "过程分析"
+					}
+				}
+			}
         }
         ,{
             "path" : "pages/navigate_page/Home/passageDetails/passageDetails",

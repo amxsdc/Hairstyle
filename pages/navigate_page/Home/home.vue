@@ -107,8 +107,10 @@
 			clickAPI(func){
 				var _this=this;
 				_this.$u.toast("点击功能"+(_this.APIname[func]));
-				return;	//先直接杀掉函数，后期改
-				
+				// return;	//先直接杀掉函数，后期改
+				if(func != 1){
+					return;
+				}
 				switch(func){
 					case 0:
 						// return;
@@ -117,7 +119,6 @@
 						});
 						break;
 					case 1:
-						_this.$u.toast("点击功能"+(func+1));
 						// return;
 						uni.navigateTo({
 							url:'measuringFace/measuringFace',
