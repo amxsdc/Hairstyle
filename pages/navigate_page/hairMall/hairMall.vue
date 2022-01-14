@@ -142,7 +142,7 @@
 	//打开相册按钮
 	.take_wrap{
 		width: 100%;
-		bottom: 60px;
+		bottom: 30px;
 		position: fixed;
 		display: flex;
 		justify-content: center;

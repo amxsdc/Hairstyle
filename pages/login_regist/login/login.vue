@@ -161,6 +161,7 @@
 					})
 				}
 				
+				//测试部分
 				if(_this.userName == "admin" && _this.userPassword=="123456"){
 					uni.switchTab({
 						url:"../../navigate_page/Home/home"
@@ -169,32 +170,33 @@
 				else{
 					_this.$u.toast("账户或密码输入错误");
 				}
-				return;//目前没有加入网络请求，先直接杀掉
+				// return;//目前没有加入网络请求，先直接杀掉
 				
 				// this.$u.toast('发出登录请求')
 				uni.request({
-					url: '/api/login', 
-					method:'POST',
+					// url: 'https://www.fastmock.site/mock/0063502729b0833db8e353ecf881960e/hair/login', 
+					url: "/api/login",
+					method:'GET',
 					//加入请求头，完成表单传送
 					// header: {
 					//     'content-type': 'application/x-www-form-urlencoded'
 					// },
-					data:{userName:_this.userName,password:_this.userPassword}, 
+					// data:{userName:_this.userName,password:_this.userPassword}, 
 					success: (res) => {
-						// console.log(res)
-						if(!res.data.data.status){
-							_this.$u.toast("登录失败")
-						}
-						else{
-							// console.log(res)
-							uni.setStorage({
-								key:"myKey",
-								data:{myKey:res.data.data.admin},
-							})
-							uni.switchTab({
-								url:"../../navigate_page/Home/home"
-							})
-						}
+						console.log("请求返回测试："+res.data.data.name+" "+res.data.data.password)
+						// if(!res.data.data.status){
+						// 	_this.$u.toast("登录失败")
+						// }
+						// else{
+						// 	// console.log(res)
+						// 	uni.setStorage({
+						// 		key:"myKey",
+						// 		data:{myKey:res.data.data.admin},
+						// 	})
+						// 	uni.switchTab({
+						// 		url:"../../navigate_page/Home/home"
+						// 	})
+						// }
 					}
 				});
 			},
@@ -242,19 +244,19 @@
 			flex-direction: row;
 			display: flex;
 			.hintName{			//输入框提示
-				width: 70px;
-				font-size: 12px;
+				width: 90px;
+				font-size: 14px;
 				flex-direction: row;
 				display:flex;
 				align-items: center;
 			}
 			.hintPassword{		//输入框提示	
-				width: 70px;
+				width: 90px;
 				margin-top: 20px;
 				flex-direction: row;
 				display: flex;
 				align-items: center;
-				font-size: 12px;
+				font-size: 14px;
 			}
 			.userName{			//用户名
 				width: 100%;

@@ -12,13 +12,15 @@
 		{
 			"path": "pages/login_regist/login/login",
 			"style": {
-				
+				// "navigationBarTextStyle": "#ff5500",
+				"navigationBarTitleText": "登录",//#f0f0f0
+				"navigationBarBackgroundColor": "#f0f0f0"
 			}
 		},
 		{
 			"path": "pages/navigate_page/Home/home",
 			"style": {
-				"navigationBarTitleText": "3D焕发",
+				"navigationBarTitleText": "我的主页",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [
@@ -108,7 +110,7 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/navigate_page/Home/newArticle/newArticle",
+            "path" : "pages/navigate_page/Home/measuringFace/measuringFace",
             "style" : {}
         }
         ,{
@@ -177,7 +179,7 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "我的信息",
+		"navigationBarTitleText": "我的信息",//#f0f0f0
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},

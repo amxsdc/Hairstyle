@@ -118,9 +118,9 @@
 						break;
 					case 1:
 						_this.$u.toast("点击功能"+(func+1));
-						return;
+						// return;
 						uni.navigateTo({
-							url:'campusNews/campusNews',
+							url:'measuringFace/measuringFace',
 						});
 						break;
 					case 2:

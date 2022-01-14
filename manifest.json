@@ -60,17 +60,43 @@
             },
             "icons" : {
                 "android" : {
-                    "hdpi" : "static/logo.png",
-                    "xhdpi" : "static/logo.png",
-                    "xxhdpi" : "static/logo.png",
-                    "xxxhdpi" : "static/logo.png"
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
                 },
                 "ios" : {
-                    "appstore" : "static/logo.png"
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
                 }
             },
             "splashscreen" : {
-                "androidStyle" : "common"
+                "androidStyle" : "default",
+                "android" : {
+                    "hdpi" : "static/bgimg.png",
+                    "xhdpi" : "static/bgimg.png",
+                    "xxhdpi" : "static/bgimg.png"
+                }
             }
         }
     },
@@ -104,15 +130,20 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/api" : {
-                    "target" : "http://192.168.1.103:8000",
+					"target": "https://www.fastmock.site/mock/0063502729b0833db8e353ecf881960e/hair",
+                    // "target" : "http://192.168.1.103:8000",
                     // "target": "http://192.168.1.112:8000",
                     // "target": "http://192.168.43.95:8000",
                     // "target": "http://192.168.0.168:8000", //目标接口域名
                     // "target":"http://192.168.0.123:8000",
                     // "target":"http://192.168.1.106:8000",
                     "changeOrigin" : true, //是否跨域
-                    "secure" : false // 设置支持https协议的代理
-                }
+                    "secure" : false, // 设置支持https协议的代理
+					"pathRewrite": { //匹配请求路径里面有 /api 会替换成https://www.test.com
+						// 举例：/api/api/user => https://www.test.com/api/user
+						"^/api": "/api"
+					}
+                } 
             }
         },
         "domain" : "127.0.0.1"
