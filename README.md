@@ -1,5 +1,32 @@
 前端分支--TangYingfu
 
+01月15日凌晨：
+
+1、配置了跨域，使用fastMock模拟网络接口实现通信，目前实现登录的请求响应（注：网页需要配置跨域，而APP好像不行--要直接放链接），此处实现如下，图中的版本的网页版，network包含了请求信息。
+
+![image](https://user-images.githubusercontent.com/81294772/149561356-a8fcdbbb-6c10-4502-8d6d-8b388cd3bc6f.png)
+
+fastMock模拟接口配置如下：
+
+![image](https://user-images.githubusercontent.com/81294772/149561449-8818bd1c-4e77-40bd-b10d-03958b379173.png)
+
+跨域部分实现如下：
+
+![image](https://user-images.githubusercontent.com/81294772/149561571-cbf51df5-0fcc-410c-9f2b-4da586a80edf.png)
+
+
+2、开始编写“测脸型”模块（未完成），解决状态栏透明度问题，参考：https://www.jianshu.com/p/8d0bbc7dccf7 （此实现只针对APP，对微信小程序无用--未测试）
+
+![image](https://user-images.githubusercontent.com/81294772/149561714-65b9c14b-1347-4204-9b2b-a28709538fee.png)
+
+3、解决APP启动页和图标问题----配置即可，页面背景使用一个view来实现更可靠
+
+![image](https://user-images.githubusercontent.com/81294772/149561928-105b75c2-c625-4fd8-bfad-860998f5c7a8.png)
+
+
+
+01月14日凌晨：
+
 注意：
   1、本实现还有很多bug未修复，未实现网络编程即未实现图片的上传和下载；uniapp会存在一些兼容性问题；
   
