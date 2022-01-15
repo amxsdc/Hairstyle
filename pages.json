@@ -45,7 +45,9 @@
 		}
 	    ,{
             "path" : "pages/test/test",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"我的测试页面"
+			}
         }
         ,{
             "path" : "pages/login_regist/regist/regist",
