@@ -3,7 +3,9 @@
 01月15日晚：
 
 1、使用别人的vue-3D-model封装好的组件库（npm下载）实现了3D模型（stl文件）的展示，其他内容正在学习使用，目前展示成功----问题，使用他人的组件库会不会存在问题（版权），我们自己能都从头造轮子。
+
 vue-3D-model的github地址：https://github.com/hujiulong/vue-3d-model
+
 vue-3D-model的参考网页：https://blog.csdn.net/weixin_44963099/article/details/106275000?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.pc_relevant_default&utm_relevant_index=3
 
 实现效果（待完善）---现由于3D模型较大，加载比较慢：
