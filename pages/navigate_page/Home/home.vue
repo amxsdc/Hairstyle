@@ -215,10 +215,11 @@
 		text-align: right;
 		padding-right: 10px;
 		border-radius: 5px;
-		background-color: #ffaaff;
+		background-color: #ff5500;
 	}
 	.userCount{
 		flex: 1;
+		font-size: 12px;
 	}
 	.recommand_img{
 		width: 100%;

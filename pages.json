@@ -145,40 +145,6 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/myApp/myHome/myHome",
-            "style" : {
-				"navigationBarTitleText": "3D焕发",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"text": "退出",
-								"color":"#2B85E4",
-								// "fontSrc": "/static/1.png",
-								"fontSize": "12px",
-								"float": "left"
-							},
-							{
-								"text": "上传图片",
-								"color":"#2B85E4",
-								// "fontSrc": "/static/post.png",
-								"fontSize": "12px",
-								"float":"right"
-							}
-						]
-					}
-				}
-			}
-        }
-        ,{
-            "path" : "pages/myApp/myDetail/myDetail",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/myApp/mine/mine",
-            "style" : {}
-        }
-        ,{
             "path" : "pages/navigate_page/hairMall/hairMall",
             "style" :                                                                                    
             {
