@@ -127,10 +127,17 @@
 								url: '/api/createUser', 
 								method:'POST',
 								//传送用户名、管理员令牌、密码，性别、年龄邮箱
-								data:{userName:_this.userName,managerKey:_this.userRootKey,password:_this.userPassword,regAge:_this.userAge,regSex:_this.userGender,regEmail:_this.userEmail}, 
+								// data:{userName:_this.userName,
+								// 		managerKey:_this.userRootKey,
+								// 		password:_this.userPassword,
+								// 		regAge:_this.userAge,
+								// 		regSex:_this.userGender,
+								// 		regEmail:_this.userEmail}, 
 								success: (res) => {
+									console.log(res.data);
+									return;					//先直接杀掉，后续再处理
 									if(!res.data.data.status){
-										_this.$u.toast("用户名已存在，并更改")
+										_this.$u.toast("用户名已存在，请更改")
 										return;
 									}
 									uni.navigateBack({
