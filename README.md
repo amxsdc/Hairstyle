@@ -2,7 +2,22 @@
 
 01月15日晚：
 
-1、完善测脸型界面---主要解决滑动切换页面窗口（swipe-view实现）
+1、使用别人的vue-3D-model封装好的组件库（npm下载）实现了3D模型（stl文件）的展示，其他内容正在学习使用，目前展示成功----问题，使用他人的组件库会不会存在问题（版权），我们自己能都从头造轮子。
+vue-3D-model的github地址：https://github.com/hujiulong/vue-3d-model
+vue-3D-model的参考网页：https://blog.csdn.net/weixin_44963099/article/details/106275000?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.pc_relevant_default&utm_relevant_index=3
+
+实现效果（待完善）---现由于3D模型较大，加载比较慢：
+
+![image](https://user-images.githubusercontent.com/81294772/149628925-d635d6d3-008b-468a-8f5e-0e45cd58afde.png)
+
+【实现方式】
+
+导入组件，并加入到项目中，实例化使用：
+
+![image](https://user-images.githubusercontent.com/81294772/149628967-109f1c23-95cb-4a92-b201-03d0ab8b5e8f.png)
+
+
+2、完善测脸型界面---主要解决滑动切换页面窗口（swipe-view实现）
 
 ![image](https://user-images.githubusercontent.com/81294772/149626500-a18bbf51-2868-4816-83ec-3547180f701d.png)
 
