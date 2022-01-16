@@ -108,7 +108,12 @@
 				var _this=this;
 				_this.$u.toast("点击功能"+(_this.APIname[func]));
 				// return;	//先直接杀掉函数，后期改
-				if(func != 1){
+				if(func==3){
+					uni.navigateTo({
+						url:"../../test/test",
+					})
+				}
+				if(func != 1 && func!=3){
 					return;
 				}
 				switch(func){

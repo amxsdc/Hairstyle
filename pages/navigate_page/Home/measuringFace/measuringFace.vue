@@ -2,7 +2,7 @@
 	<view class="content">
 		<!-- 背景图片 -->
 		<image class="bg"></image>
-		<image class="logo" :src="myHeadPhoto"></image>
+		<image class="logo" :src="myHeadPhoto" @click="clickFace"></image>
 		<!-- 提示语 -->
 		<text class="tips">智能分析 识别中···</text>
 		
@@ -69,14 +69,6 @@
 			onShow(){
 				
 			},
-			//接受子组件传过来的值点击切换导航
-			tabtap(index){
-				this.tabIndex = index;
-			},
-			//滑动切换导航
-			tabChange(e){
-			   this.tabIndex = e.detail.current;
-			},
 			
 			onLoad(){
 				uni.getSystemInfo({
@@ -87,10 +79,24 @@
 				})
 			},
 			
+			//接受子组件传过来的值点击切换导航
+			tabtap(index){
+				this.tabIndex = index;
+			},
+			//滑动切换导航
+			tabChange(e){
+			   this.tabIndex = e.detail.current;
+			},
+			
 			//点击细节按钮
 			clickDetail(i,j){
 				this.$u.toast("点击了"+this.detailText[i][j]);
 			},
+			
+			//点击头像
+			clickFace(){
+				this.$u.toast("点击了头像")
+			}
 		},
 		
 		//注册组件

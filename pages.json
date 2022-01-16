@@ -127,8 +127,24 @@
 			}
         }
         ,{
-            "path" : "pages/navigate_page/Home/passageDetails/passageDetails",
-            "style" : {}
+            "path" : "pages/navigate_page/Home/changeHairStyle/changeHairStyle",
+            "style" : {
+				"navigationBarTitleText":"换发型",
+				
+				"app-plus":{
+					"titleNView": {
+						"buttons": [
+							{
+								"text": "保存",
+								"color":"Black",
+								// "fontSrc": "/static/post.png",
+								"fontSize": "12px",
+								"float":"right"
+							}
+						]
+					}
+				}
+			}
         }
         ,{
             "path" : "pages/navigate_page/mine/myComment/editComment/editComment",
@@ -140,10 +156,6 @@
         }
         ,{
             "path" : "pages/navigate_page/mine/myComment/postComment/postComment",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/Home/passageDetails/editPassage/editPassage",
             "style" : {}
         }
         ,{
