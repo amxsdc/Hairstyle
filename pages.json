@@ -167,6 +167,23 @@
             }
             
         }
+        ,{
+            "path" : "pages/navigate_page/Home/cartoonFace/cartoonFace",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "漫画脸",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"rgba(0,0,0,0)",
+				"navigationBarTextStyle":"white",
+				"app-plus": {
+					"titleNView": {
+						"type": "float"
+						// "titleText": "过程分析"
+					}
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -108,12 +108,7 @@
 				var _this=this;
 				_this.$u.toast("点击功能"+(_this.APIname[func]));
 				// return;	//先直接杀掉函数，后期改
-				if(func==3){
-					uni.navigateTo({
-						url:"../../test/test",
-					})
-				}
-				if(func != 1 && func!=3){
+				if(func != 1 && func!=3 && func != 7){
 					return;
 				}
 				switch(func){
@@ -137,10 +132,8 @@
 						});
 						break;
 					case 3:
-						_this.$u.toast("点击功能"+(func+1));
-						return;
 						uni.navigateTo({
-							url:'memorandum/memorandum',
+							url:'../../test/test',
 						});
 						break;
 					case 4:
@@ -155,6 +148,18 @@
 						return;
 						uni.switchTab({
 							url:'../settings/settings',
+						});
+						break;
+					case 6:
+						_this.$u.toast("点击功能"+(func+1));
+						return;
+						uni.switchTab({
+							url:'../settings/settings',
+						});
+						break;
+					case 7:
+						uni.navigateTo({
+							url:'./cartoonFace/cartoonFace',
 						});
 						break;
 				}
