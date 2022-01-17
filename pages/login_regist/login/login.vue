@@ -3,7 +3,10 @@
 		<!-- 背景图片 -->
 		<image class="bgimg"></image>
 		
-		<view class="title">3D焕发</view>
+		<view class="title">
+			<image class="loginGif" src="../../../static/login_logo.gif"></image>
+			3D焕发
+		</view>
 		<image class="logo" :src="myHeadPhoto"></image>
 		<view class="inputname">
 			<text class="hintName">用户名：</text>
@@ -234,6 +237,13 @@
 		height: 100%;
 		color: #FFFFFF;
 		
+		//gif图标
+		.loginGif{
+			width: 32px;
+			height: 32px;
+			border-radius: 5px;
+		}
+		
 		.buttonSet{				//按钮集合设置
 			flex-direction: row;
 			display: flex;
@@ -307,6 +317,9 @@
 			margin-top: 60px;
 		}
 		.title {				//页面标题
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			margin-top: 200upx;
 			text-align: center;
 			font-size: 28px;
