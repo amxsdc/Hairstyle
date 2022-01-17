@@ -1,5 +1,8 @@
 <template>
-	<view class="content">
+	<view class="content">		
+		<!-- 背景图片 -->
+		<image class="bgimg"></image>
+		
 		<view class="title">3D焕发</view>
 		<image class="logo" :src="myHeadPhoto"></image>
 		<view class="inputname">
@@ -211,8 +214,17 @@
 
 <style lang="scss" scoped>
 	page{						//全局页面配置
-		background-color: #f0f0f0;
+		// background-color: #f0f0f0;
 	}
+	/* 背景图片 */
+	.bgimg{
+		background-image: url("../../../static/bgSky.png");
+		z-index: -1;
+		height: 100%;
+		position: fixed;
+		filter: blur(3rpx) brightness(70%);//模糊半径和变暗度
+	}
+	
 	.content {					//父容器
 		flex-direction: column;
 		display: flex;
@@ -220,12 +232,15 @@
 		align-content: center;
 		width: 100%;
 		height: 100%;
+		color: #FFFFFF;
+		
 		.buttonSet{				//按钮集合设置
 			flex-direction: row;
 			display: flex;
 		}
 		.checkbox{				//复选框
 			margin-top: 20px;
+			color: #FFFFFF;
 		}
 		.logo {					//头像
 			height: 72px;
@@ -235,9 +250,10 @@
 			margin-right: auto;
 			margin-bottom: 50rpx;
 			border-radius: 50%;
-			-moz-box-shadow:0 0 10px 10px #06c;
-			-webkit-box-shadow:0 0 10px 10px #06c;
-			box-shadow:0 0 10px 10px #06c;
+			border-style: groove;
+			-moz-box-shadow:0 0 7px 7px #06c;
+			-webkit-box-shadow:0 0 7px 7px #06c;
+			box-shadow:0 0 7px 7px #06c;
 		}
 		.inputname {			//输入框用户名
 			width: 50%;
@@ -291,7 +307,7 @@
 			margin-top: 60px;
 		}
 		.title {				//页面标题
-			margin-top: 100upx;
+			margin-top: 200upx;
 			text-align: center;
 			font-size: 28px;
 			font-weight: 500;

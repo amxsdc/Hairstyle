@@ -14,7 +14,14 @@
 			"style": {
 				// "navigationBarTextStyle": "#ff5500",
 				"navigationBarTitleText": "登录",//#f0f0f0
-				"navigationBarBackgroundColor": "#f0f0f0"
+				// "navigationBarBackgroundColor": "#f0f0f0",
+				"navigationBarBackgroundColor":"rgba(0,0,0,0)",
+				"navigationBarTextStyle":"white",
+				"app-plus":{
+					"titleNView":{
+						"type":"float"
+					}
+				}
 			}
 		},
 		{

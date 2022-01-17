@@ -29,9 +29,9 @@
 			</view>
 		</view>
 		<view class="gender-wrap">
-			<icon type="clear" size="14"></icon>
+			<icon type="clear" size="14" @click="clickButton(1)"></icon>
 			<swiperTabGender class="Tag2" :tabBars="gender" :tabIndex="tabGender" @tabtap="clickGender"></swiperTabGender>
-			<icon type="success" size="14"></icon>
+			<icon type="success" size="14" @click="clickButton(2)"></icon>
 		</view>
     </view>
 </template>
@@ -95,6 +95,11 @@
 			//选择发型
 			selectHair(i,j){
 				this.$u.toast("点击了坐标（"+i+","+j+")");
+			},
+			
+			//点击两个图标按钮
+			clickButton(index){
+				index==1?this.$u.toast("点击了取消按钮"):this.$u.toast("点击了确认按钮")
 			}
 		}
 	}
@@ -113,12 +118,16 @@
 		flex-direction: column;
 		align-items: center;
 		display: flex;
+		margin-left: 3px;
+		margin-right: 3px;
+		border-style: groove;
 		width: 100%;
-		height: 300px;
+		height: 305px;
 	}
 	.effect{
 		z-index: -1;
 		position: fixed;
+		width: 100%;
 		height: 300px;
 	}
 	

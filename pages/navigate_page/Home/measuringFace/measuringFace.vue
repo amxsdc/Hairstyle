@@ -120,7 +120,8 @@
 			width: 100%;
 			height: 100%;
 			z-index: -1;
-			position: fixed;
+			position: fixed;		
+			filter: blur(4rpx) brightness(70%);//模糊半径和变暗度
 			background-image: url("../../../../static/bgMeasuring.png");
 		}
 		
@@ -132,6 +133,7 @@
 			margin-right: auto;
 			margin-bottom: 50rpx;
 			border-radius: 50%;
+			border-style: groove;
 			-moz-box-shadow:0 0 3px 3px #06c;
 			-webkit-box-shadow:0 0 3px 3px #06c;
 			box-shadow:0 0 3px 3px #06c;
@@ -145,6 +147,7 @@
 			border: medium double rgb(0, 85, 255);
 			// background-color: #55557f;
 			border-radius: 5px;
+			border-style: groove;
 		}
 		
 		//滑动页
@@ -191,6 +194,11 @@
 			flex-direction: row;
 			align-items: center;
 			border-radius: 5px;
+		}
+		
+		//滑动显示容器
+		.tab-bar{
+			height: 100%;
 		}
 	}
 </style>

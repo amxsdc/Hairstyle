@@ -1,5 +1,8 @@
 <template>
-    <view>
+    <view class="content">
+		<!-- 背景图片 -->
+		<!-- <image class="bgimg"></image> -->
+		
 		<view class="bgContent">
 			<view class="myPhoto">
 				<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../../static/header-cabbit.png"></image>
@@ -113,6 +116,13 @@
 </script>
 
 <style>
+	/* 背景图片 */
+	/* .bgimg{ */
+		/* background-image: url("../../../static/bgSky.png"); */
+		/* z-index: -1; */
+		/* position: fixed; */
+	/* } */
+	
 	.bgContent{
 		background-color: #f3f2f0;
 		display: flex;
@@ -182,6 +192,7 @@
 	}
 	.APIname{
 		font-size: 14px;
+		font-weight: bold;
 	}
 	
 	/* detail按钮 */
