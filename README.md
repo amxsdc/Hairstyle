@@ -6,9 +6,9 @@
 
 ![image](https://user-images.githubusercontent.com/81294772/149811211-2108892b-0eb6-4f46-b33e-6bb99fb389d7.png)
 
-2、在登录界面加背景
+2、在登录界面加背景+动图
 
-![image](https://user-images.githubusercontent.com/81294772/149816384-94a0d894-92eb-4a0a-ba2b-3bdb3f7e98ff.png)
+![image](https://user-images.githubusercontent.com/81294772/149818964-c0e37695-73a2-485f-9a22-5aa9a61a1eed.png)
 
 
 
