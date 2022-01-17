@@ -6,6 +6,11 @@
 
 ![image](https://user-images.githubusercontent.com/81294772/149811211-2108892b-0eb6-4f46-b33e-6bb99fb389d7.png)
 
+2、在登录界面加背景
+
+![image](https://user-images.githubusercontent.com/81294772/149816384-94a0d894-92eb-4a0a-ba2b-3bdb3f7e98ff.png)
+
+
 
 
 01月16日晚：
