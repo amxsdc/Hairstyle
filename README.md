@@ -1,5 +1,12 @@
 前端分支--Tangyingfu
 
+【前端效果示例】
+
+![image](https://user-images.githubusercontent.com/81294772/149989348-d357508e-18ee-40ef-a421-b42fa0908f86.png)
+
+![image](https://user-images.githubusercontent.com/81294772/149989232-20929214-ad60-4a09-b14c-7e273db0bbd1.png)
+
+
 01月18日晚：
 
 1、由于界面设计缺陷，修改项目结构，顶层为入口；
@@ -11,7 +18,7 @@
 
 【项目结构】
 
-![image](https://user-images.githubusercontent.com/81294772/149954829-bac21463-531b-4031-b22d-dbe808a0e06d.png)
+![image](https://user-images.githubusercontent.com/81294772/149989523-7c55a0d7-7f71-4b84-8d25-6de00e6b13ab.png)
 
 
 2、目前主要维护测试版本，逐步推进界面UI设计优化。
