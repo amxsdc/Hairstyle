@@ -16,10 +16,12 @@
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
 							<!-- 分析结果等 -->
 							<view class="appDetail">
-								<view class="detailTextWrap" v-for="j in detailText[i].length" :key="j" @click="clickDetail(i,j-1)">
-									<image class="textIcon" :src="textIcon[j-1]"></image>
-									<text class="textText">{{detailText[i][j-1]}}</text>
-								</view>
+								<!-- <scroll-view scroll-y="true" style="height: 100%;"> -->
+									<view class="detailTextWrap" v-for="j in detailText[i].length" :key="j" @click="clickDetail(i,j-1)">
+										<image class="textIcon" :src="textIcon[j-1]"></image>
+										<text class="textText">{{detailText[i][j-1]}}</text>
+									</view>
+								<!-- </scroll-view> -->
 							</view>
 						</scroll-view> 
 					</swiper-item>
@@ -122,7 +124,7 @@
 			z-index: -1;
 			position: fixed;		
 			filter: blur(4rpx) brightness(70%);//模糊半径和变暗度
-			background-image: url("../../../../static/bgMeasuring.png");
+			background-image: url("../../../../static/bgSky.png");
 		}
 		
 		.logo {					//头像

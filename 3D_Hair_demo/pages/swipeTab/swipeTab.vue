@@ -47,7 +47,7 @@
         border-bottom: 1upx solid #EEEEEE;
     }
     .tab-list{
-        color: #000000;
+        color: #ffaaff;
         font-weight: bold;
 		display: flex;
 		flex-direction: column;

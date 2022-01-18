@@ -1,5 +1,8 @@
 <template>
     <view>
+		<!-- 左侧菜单栏 -->
+		<leftMenu></leftMenu>
+		
 		<view class="swiperContent">
 			<view class="page-section-spacing">
 				<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
@@ -64,6 +67,9 @@
 </template>
 
 <script>
+	//导入左侧菜单
+	import leftMenu from "../../swipeTab/leftMenu.vue";
+	
 	export default {
 		data() {
 			return {
@@ -172,6 +178,11 @@
 			clickTry(){
 				this.$u.toast("点击了试戴")
 			}
+		},
+		
+		//组件注册
+		components:{
+			leftMenu,
 		}
 	}
 </script>
