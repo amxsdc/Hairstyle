@@ -8,5 +8,7 @@
 
 【项目结构】
 
+![image](https://user-images.githubusercontent.com/81294772/149954829-bac21463-531b-4031-b22d-dbe808a0e06d.png)
 
 
+2、目前主要维护测试版本，逐步推进界面UI设计优化。
