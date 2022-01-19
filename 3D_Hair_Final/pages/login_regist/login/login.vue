@@ -24,6 +24,11 @@
 			<u-button @click="submit" :style="[buttonStyle]" class="button-LogReg">登录</u-button>
 			<u-button @click="registButton" :style="[buttonStyle]" class="button-LogReg">注册</u-button>
 		</view>
+		<view class="loginAPI-wrap">
+			<image class="loginAPI_icon" src="../../../static/QQ.png" @click="loginIII(1)"></image>
+			<image class="loginAPI_icon" src="../../../static/weibo.png" @click="loginIII(2)"></image>
+			<image class="loginAPI_icon" src="../../../static/wx.png" @click="loginIII(3)"></image>
+		</view>
 	</view>
 </template>
 
@@ -210,6 +215,13 @@
 				uni.navigateTo({
 					url:"../regist/regist"
 				})
+			},
+			
+			// 第三方登录按钮
+			loginIII(index){
+				var way="";
+				index==1?way="QQ登录":index==2?way="微博登录":way="微信登录";
+				this.$u.toast("点击了"+way);
 			}
 		},
 	};
@@ -223,6 +235,7 @@
 	.bgimg{
 		background-image: url("../../../static/bgSky.png");
 		z-index: -1;
+		width: 100%;
 		height: 100%;
 		position: fixed;
 		filter: blur(3rpx) brightness(70%);//模糊半径和变暗度
@@ -289,6 +302,7 @@
 				border-radius: 3px;
 				background-color: #FFFFFF;
 				font-size: 14px;
+				color: #000000;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
 				box-shadow: inset 0 0 10px #CCC;
@@ -299,6 +313,7 @@
 				border-radius: 3px;
 				margin-top: 20px;
 				font-size: 14px;
+				color: #000000;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
 				box-shadow: inset 0 0 10px #CCC;
@@ -330,6 +345,17 @@
 			text-align: left;
 			margin-bottom: 10rpx;
 			padding-bottom: 6rpx;
+		}
+		
+		// 第三方登录按钮
+		.loginAPI-wrap{
+			display: flex;
+			flex-direction: row;
+		}
+		.loginAPI_icon{
+			width: 32px;
+			height: 32px;
+			margin: 10px;
 		}
 	}
 </style>
