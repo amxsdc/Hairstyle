@@ -1,7 +1,21 @@
 <template>
-    <view>
+    <view class="content">
 		<!-- 左侧菜单栏 -->
 		<leftMenu></leftMenu>
+		
+		<!-- 导航栏主页按钮 -->
+		<view class="headButton-wrap">
+			<view class="img-temp-wrap">
+				<view class="img-wrap" @click="clickTopButton(1)">
+					<image class="measuringFace" src="../../../static/faceType.png"></image>
+					<text class="measuringText">测脸型</text>
+				</view>
+				<view class="img-wrap" @click="clickTopButton(2)">
+					<image class="measuringFace" src="../../../static/hairType.png"></image>
+					<text class="measuringText">换发型</text>
+				</view>
+			</view>
+		</view>
 		
 		<view class="swiperContent">
 			<view class="page-section-spacing">
@@ -102,6 +116,14 @@
 			}
 		},
 		methods: {
+			//点击顶部按钮
+			clickTopButton(index){
+				var text="";
+				index==1?text="测脸型":text="换发型";
+				
+				this.$u.toast("点击了"+text);
+			},
+			
 			//轮播图点击事件
 			selectPoster(){
 				uni.showToast({
@@ -186,6 +208,43 @@
 </script>
 
 <style>
+	.content{
+		
+	}
+	
+	/* 导航按钮 */
+	.headButton-wrap{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+		width: 100%;
+		height: 50px;
+		/* background-color: #000000; */
+	}
+	.img-temp-wrap{
+		width: 60%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+	.img-wrap{
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.measuringFace{
+		width: 24px;
+		height: 24px;
+	}
+	.measuringText{
+		font-size: 14px;
+	}
+	
 	//banner
 	.swiperContent{
 		background-color: #f3f2f0;
