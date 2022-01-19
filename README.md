@@ -3,6 +3,7 @@
 【前端效果示例】
 
 ![image](https://user-images.githubusercontent.com/81294772/149989348-d357508e-18ee-40ef-a421-b42fa0908f86.png)
+![image](https://user-images.githubusercontent.com/81294772/150097634-c7da4c47-f411-4469-a322-d1af8ee87247.png)
 
 ![image](https://user-images.githubusercontent.com/81294772/149989232-20929214-ad60-4a09-b14c-7e273db0bbd1.png)
 
