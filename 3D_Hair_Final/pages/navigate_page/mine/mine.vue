@@ -6,7 +6,10 @@
 		<view class="bgContent">
 			<view class="myPhoto">
 				<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../../static/header-cabbit.png"></image>
-				<text class="userName" @click="changeH_N(2)">兔子1号</text>
+				<view class="userinfo-wrap">
+					<text class="userName" @click="changeH_N(2)">昵称：{{userNick}}</text>
+					<text class="userId" @click="changeH_N(2)">ID ：{{userId}}</text>
+				</view>
 			</view>
 			<image class="bgPhoto" @click="changeBgImage" mode="aspectFill" src="../../../static/campus.png"></image>
 		</view>
@@ -42,6 +45,9 @@
 	export default {
 		data() {
 			return {
+				userNick: "发胶一号",
+				userId: "123123",
+				
 				icon: ['../../../static/add.png', '../../../static/personal.png'],
 				APIname:['修改资料','修改密码'],
 				
@@ -149,12 +155,19 @@
 		z-index: 2;
 		box-shadow: 0px 0px 2px 2px #0000ff;
 	}
-	.userName{
+	
+	//用户信息
+	.userinfo-wrap{
 		position: absolute;
 		z-index: 2;
 		color: #FFFFFF;
 		font-size: 16px;
 		margin-left: 80px;
+		display: flex;
+		flex-direction: column;
+	}
+	.userName{
+		
 	}
 	
 	/* API按钮 */

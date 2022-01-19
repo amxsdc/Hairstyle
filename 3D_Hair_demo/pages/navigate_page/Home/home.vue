@@ -76,7 +76,7 @@
 				icon: ['../../../static/schedule1.png', '../../../static/newsAPI.png', '../../../static/map.png',
 					'../../../static/memory.png','../../../static/english.png','../../../static/settingsAPI.png'
 					,'../../../static/schedule1.png','../../../static/settingsAPI.png'],
-				APIname:['发型设计','测脸型','换发型','换刘海','图库','贴纸','配饰','漫画脸'],
+				APIname:['发型设计','测脸型','换发型','换刘海','发型社区','贴纸','配饰','漫画脸'],
 				
 				//banner
 				indicatorDots: true,

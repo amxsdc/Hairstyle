@@ -200,6 +200,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/navigate_page/Home/hairCommunity/hairCommunity",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "发型社区",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

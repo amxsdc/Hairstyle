@@ -4,7 +4,7 @@
 		<leftMenu></leftMenu>
 		
 		<!-- 导航栏主页按钮 -->
-		<view class="headButton-wrap">
+		<!-- <view class="headButton-wrap">
 			<view class="img-temp-wrap">
 				<view class="img-wrap" @click="clickTopButton(1)">
 					<image class="measuringFace" src="../../../static/faceType.png"></image>
@@ -15,7 +15,7 @@
 					<text class="measuringText">换发型</text>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		
 		<view class="swiperContent">
 			<view class="page-section-spacing">
@@ -117,12 +117,12 @@
 		},
 		methods: {
 			//点击顶部按钮
-			clickTopButton(index){
-				var text="";
-				index==1?text="测脸型":text="换发型";
+			// clickTopButton(index){
+			// 	var text="";
+			// 	index==1?text="测脸型":text="换发型";
 				
-				this.$u.toast("点击了"+text);
-			},
+			// 	this.$u.toast("点击了"+text);
+			// },
 			
 			//轮播图点击事件
 			selectPoster(){
@@ -224,7 +224,7 @@
 		height: 50px;
 		/* background-color: #000000; */
 	}
-	.img-temp-wrap{
+	/* .img-temp-wrap{
 		width: 60%;
 		height: 100%;
 		display: flex;
@@ -243,7 +243,7 @@
 	}
 	.measuringText{
 		font-size: 14px;
-	}
+	} */
 	
 	//banner
 	.swiperContent{
