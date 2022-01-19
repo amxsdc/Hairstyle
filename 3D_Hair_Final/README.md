@@ -1,4 +1,17 @@
-前端分支--TangYingfu---由于界面过于简陋和功能实现技术性太差，正考虑界面优化，但由于UI感太差，我先实现功能，后期继续完成界面迁移和优化。
+前端分支--TangYingfu---此版本为修改版，正逐步进行优化，当前优化未完成
+
+01月19日：
+
+1、修改注册登录、忘记密码等页面，按照原型设计进行优化，但优化不完全，有待进一步优化---原“发型广场”已迁移至首页“发型设计”模块
+
+![image](https://user-images.githubusercontent.com/81294772/150099016-695ee4ad-f99a-42ab-8f37-06777032e43e.png)
+![image](https://user-images.githubusercontent.com/81294772/150099052-4adc2fc7-ae2d-4ba2-b548-6f65881320f4.png)
+
+
+![image](https://user-images.githubusercontent.com/81294772/150099106-c5b1248d-51f4-4617-89ad-c618578ccb38.png)
+![image](https://user-images.githubusercontent.com/81294772/150099197-764a7f27-8e24-4f1d-aefd-d5a173fef1ab.png)
+
+
 
 01月18日晚：
 
