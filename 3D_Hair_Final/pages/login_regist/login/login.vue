@@ -3,17 +3,17 @@
 		<!-- 背景图片 -->
 		<image class="bgimg"></image>
 		
-		<view class="title">
+		<!-- <view class="title">
 			<image class="loginGif" src="../../../static/login_logo.gif"></image>
 			3D焕发
-		</view>
+		</view> -->
 		<image class="logo" :src="myHeadPhoto"></image>
 		<view class="inputname">
-			<text class="hintName">用户名：</text>
+			<!-- <text class="hintName">用户名：</text> -->
 			<input class="userName" @input="changeName" type="text" v-model="userName"  placeholder="请输入用户名" />
 		</view>
 		<view class="inputname">
-			<text class="hintPassword">密   码：</text>
+			<!-- <text class="hintPassword">密   码：</text> -->
 			<input class="userPassword" type="password" v-model="userPassword" placeholder="请输入密码" />
 		</view>
 		<view class="aboutpassword">
@@ -97,14 +97,14 @@
 							_this.tempPhotoLink=e.data.Photolink
 						}
 						else{
-							_this.myHeadPhoto="/static/mine1.png"
-							_this.tempPhotoLink="/static/mine1.png"
+							_this.myHeadPhoto="/static/logo.png"
+							_this.tempPhotoLink="/static/logo.png"
 							// _this.$u.toast("头像加载失败")
 						}
 					},
 					fail(e){
-						_this.myHeadPhoto="/static/mine1.png"
-						_this.tempPhotoLink="/static/mine1.png"
+						_this.myHeadPhoto="/static/logo.png"
+						_this.tempPhotoLink="/static/logo.png"
 						// _this.$u.toast("头像加载失败")
 					}
 				})
@@ -251,16 +251,12 @@
 		color: #FFFFFF;
 		
 		//gif图标
-		.loginGif{
-			width: 32px;
-			height: 32px;
-			border-radius: 5px;
-		}
+		// .loginGif{
+		// 	width: 32px;
+		// 	height: 32px;
+		// 	border-radius: 5px;
+		// }
 		
-		.buttonSet{				//按钮集合设置
-			flex-direction: row;
-			display: flex;
-		}
 		.checkbox{				//复选框
 			margin-top: 20px;
 			color: #FFFFFF;
@@ -268,11 +264,11 @@
 		.logo {					//头像
 			height: 72px;
 			width: 72px;
-			margin-top: 30rpx;
+			margin-top: 200rpx;
 			margin-left: auto;
 			margin-right: auto;
-			margin-bottom: 50rpx;
-			border-radius: 50%;
+			margin-bottom: 90rpx;
+			border-radius: 10px;
 			border-style: groove;
 			-moz-box-shadow:0 0 7px 7px #06c;
 			-webkit-box-shadow:0 0 7px 7px #06c;
@@ -282,38 +278,42 @@
 			width: 50%;
 			flex-direction: row;
 			display: flex;
-			.hintName{			//输入框提示
-				width: 90px;
-				font-size: 14px;
-				flex-direction: row;
-				display:flex;
-				align-items: center;
-			}
-			.hintPassword{		//输入框提示	
-				width: 90px;
-				margin-top: 20px;
-				flex-direction: row;
-				display: flex;
-				align-items: center;
-				font-size: 14px;
-			}
+			// .hintName{			//输入框提示
+			// 	width: 90px;
+			// 	font-size: 14px;
+			// 	flex-direction: row;
+			// 	display:flex;
+			// 	align-items: center;
+			// }
+			// .hintPassword{		//输入框提示	
+			// 	width: 90px;
+			// 	margin-top: 20px;
+			// 	flex-direction: row;
+			// 	display: flex;
+			// 	align-items: center;
+			// 	font-size: 14px;
+			// }
 			.userName{			//用户名
 				width: 100%;
-				border-radius: 3px;
+				height: 2em;
+				border-radius: 10px;
 				background-color: #FFFFFF;
 				font-size: 14px;
 				color: #000000;
+				padding-left: 3px;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
 				box-shadow: inset 0 0 10px #CCC;
 			}
 			.userPassword{		//密码
 				width: 100%;
+				height: 2em;
 				background-color: #FFFFFF;
-				border-radius: 3px;
+				border-radius: 10px;
 				margin-top: 20px;
 				font-size: 14px;
 				color: #000000;
+				padding-left: 3px;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
 				box-shadow: inset 0 0 10px #CCC;
@@ -325,11 +325,18 @@
 			margin-top: 20px;
 			color: #2B85E4;
 		}
+		
+		
+		.buttonSet{				//按钮集合设置
+			flex-direction: column;
+			display: flex;
+			width: 100%;
+		}
 		.button-LogReg{			//注册和登录按钮
 			width: 40%;
 			height: 35px;
 			font-size: 14px;
-			margin-top: 60px;
+			margin-top: 10px;
 		}
 		.title {				//页面标题
 			display: flex;

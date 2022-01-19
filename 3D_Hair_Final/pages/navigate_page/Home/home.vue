@@ -114,14 +114,14 @@
 				var _this=this;
 				_this.$u.toast("点击功能"+(_this.APIname[func]));
 				// return;	//先直接杀掉函数，后期改
-				if(func != 1 && func!=3 && func != 7){
+				if(func != 0 && func != 1 && func!=3 && func != 7 && func!=2){
 					return;
 				}
 				switch(func){
 					case 0:
 						// return;
-						uni.switchTab({
-							url:"../TakePicture/takePicture",
+						uni.navigateTo({
+							url:"../hairMall/hairMall",
 						});
 						break;
 					case 1:
@@ -131,10 +131,8 @@
 						});
 						break;
 					case 2:
-						_this.$u.toast("点击功能"+(func+1));
-						return;
 						uni.navigateTo({
-							url:'map/map',
+							url:'changeHairStyle/changeHairStyle',
 						});
 						break;
 					case 3:

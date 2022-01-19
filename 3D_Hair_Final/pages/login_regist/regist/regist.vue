@@ -1,40 +1,24 @@
 <template>
 	<view class="content">
 		<view class="title">用户注册</view>
-		<view class="inputname">
-			<text class="hintinfo">用户名：</text>
-			<input class="userinfo" type="text" v-model="userName"  placeholder="请输入用户名" />
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">用户权限：</text>
-			<input class="userinfo" type="text" v-model="userRootKey"  placeholder="输入密钥成为管理员,非管理员不填" />
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">密   码：</text>
-			<input class="userinfo" type="password" v-model="userPassword" placeholder="请输入密码" />
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">确认密码：</text>
-			<input class="userinfo" type="password" v-model="userPpassword"  placeholder="请确认密码" />
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">性 别：</text>
-			<!-- 下拉菜单 -->
-			<view class="pullDownMenu">
-				<text class="userinfo">{{userGender}}</text>
-				<picker class="pullEntry" @change="genderChange" :range="genderList">
-					<label><image class="pullIcon" src="/static/pullDown.png"></image></label>
-					<label class="">{{genderList[index]}}</label>
-				</picker>
+		<view class="input-wrap">
+			<view class="inputname">
+				<!-- <text class="hintinfo">用户名：</text> -->
+				<input class="userinfo-account" type="text" v-model="userName"  placeholder="手机号/邮箱" />
+				<button class="getCode" @click="clickGetCode">验证码</button>
 			</view>
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">年 龄：</text>
-			<input class="userinfo" type="text" v-model="userAge"  placeholder="请输入年龄" />
-		</view>
-		<view class="inputname">
-			<text class="hintinfo">邮 箱：</text>
-			<input class="userinfo" type="text" v-model="userEmail" placeholder="请输入邮箱" />
+			<view class="inputname">
+				<!-- <text class="hintinfo">用户权限：</text> -->
+				<input class="userinfo" type="text" v-model="userRootKey"  placeholder="验证码" />
+			</view>
+			<view class="inputname">
+				<!-- <text class="hintinfo">密   码：</text> -->
+				<input class="userinfo" type="password" v-model="userPassword" placeholder="请输入密码" />
+			</view>
+			<view class="inputname">
+				<!-- <text class="hintinfo">确认密码：</text> -->
+				<input class="userinfo" type="password" v-model="userPpassword"  placeholder="请确认密码" />
+			</view>
 		</view>
 		<view class="buttonSet">
 			<u-button @click="registButton" :style="[buttonStyle]" class="button-LogReg">注册</u-button>
@@ -77,14 +61,14 @@
 			onLoad(){
 				
 			},
-			//用户权限选择下拉框
-			genderChange(e){
-				this.userGender=this.genderList[e.target.value];
+			
+			clickGetCode(){
+				this.$u.toast("点击了获取验证码");
 			},
 			
 			//点击取消按钮
 			cancelButton(){
-				console.log("取消注册并返回登陆界面")
+				this.$u.toast("取消注册并返回登陆界面")
 				uni.redirectTo({
 					url:"../login/login",
 				})
@@ -93,19 +77,12 @@
 			//注册按钮
 			registButton(){
 				//前期判断信息是否完善和密码是否一致
-				if(this.userName==""||this.userPassword==""||this.userPpassword==""||this.userAge==""||this.userGender==""||this.userEmail==""){
+				if(this.userName==""||this.userPassword==""||this.userPpassword==""){
 					this.$u.toast("请完善信息后再点击注册")
 					return
 				}
 				if(this.userPassword!=this.userPpassword){
 					this.$u.toast("您的密码前后不一致")
-					return
-				}
-				
-				//邮箱检测格式是否符合要求//正则表达校验，邮箱格式
-				var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
-				if(!reg.test(this.userEmail)){
-					this.$u.toast("您的邮箱格式不符合要求,请检查")
 					return
 				}
 				
@@ -117,6 +94,10 @@
 				
 				//this指针
 				var _this=this
+				
+				//暂时直接提示后杀死
+				this.$u.toast("点击了注册");
+				return;
 				
 				uni.showModal({
 					title: '确认注册',
@@ -167,54 +148,62 @@
 		width: 100%;
 		height: 100%;
 		
+		.input-wrap{
+			width: 80%;
+		}
+		
 		.buttonSet{					//按钮父容器
 			flex-direction: row;
 			display: flex;
 		}
 		.inputname {
-			width: 80%;
+			width: 100%;
 			flex-direction: row;
 			display: flex;
+			align-items: center;
 									//提示内容
-			.hintinfo{
-				width: 20%;
-				margin-top: 20px;
-				font-size: 12px;
-			}
-			
-									//输入内容
+			// .hintinfo{
+			// 	width: 20%;
+			// 	margin-top: 20px;
+			// 	font-size: 12px;
+			// }
+								//输入内容
 			.userinfo{
-				width: 70%;
+				width: 100%;
+				height: 2em;
 				background-color: #FFFFFF;
-				border-radius: 3px;
+				border-radius: 10px;
 				margin-top: 20px;
-				font-size: 12px;
+				font-size: 14px;
+				padding-left: 3px;
+				border-style: groove;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
 				box-shadow: inset 0 0 10px #CCC;
 			}
-		}
-		
-									//下拉菜单父付组件
-		.pullDownMenu{
-			width: 80%;
-			flex-direction: row;
-			display: flex;
-		}
-									//下拉菜单点击入口
-		.pullEntry{
-			margin-top: 20px;
-			width: 20px;
-			height: 20px;
-		}
-									//下拉图标
-		.pullIcon{
-			border-radius: 5px;
-			height: 20px;
-			width: 20px;
-			-moz-box-shadow: inset 0 0 10px #CCC;
-			-webkit-box-shadow: inset 0 0 10px #CCC;
-			box-shadow: inset 0 0 10px #CCC;
+			
+			//账号栏
+			.userinfo-account{
+				width: 60%;
+				height: 2em;
+				background-color: #FFFFFF;
+				border-radius: 10px;
+				margin-top: 20px;
+				font-size: 14px;
+				padding-left: 3px;
+				border-style: groove;
+				-moz-box-shadow: inset 0 0 10px #CCC;
+				-webkit-box-shadow: inset 0 0 10px #CCC;
+				box-shadow: inset 0 0 10px #CCC;
+			}
+			.getCode{
+				width: 40%;
+				font-size: 16px;
+				margin-top: 20px;
+				text-align: center;
+				background-color: #0055ff;
+				height: 2em;
+			}
 		}
 		
 									//注册-取消按钮

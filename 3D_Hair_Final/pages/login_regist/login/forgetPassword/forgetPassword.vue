@@ -1,21 +1,24 @@
 <template>
 	<view class="content">
 		<view class="title">忘记密码</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">用户名：</text>
-			<input class="userinfo" type="text" v-model="userName"  placeholder="请输入用户名" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">邮 箱：</text>
-			<input class="userinfo" type="text" v-model="userEmail" placeholder="请输入邮箱" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">新密码：</text>
-			<input class="userinfo" type="password" v-model="newpassword" placeholder="请输入新密码" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">确认密码：</text>
-			<input class="userinfo" type="password" v-model="repeatNewPassword"  placeholder="请再次输入" />
+		<view class="input-wrap">
+			<view class="inputname">
+				<!-- <text class="hintinfo">用户名：</text> -->
+				<input class="userinfo-account" type="text" v-model="userName"  placeholder="手机号/邮箱" />
+				<button class="getCode" @click="clickGetCode">验证码</button>
+			</view>
+			<view class="inputname">
+				<!-- <text class="hintinfo">用户权限：</text> -->
+				<input class="userinfo" type="text" v-model="userRootKey"  placeholder="验证码" />
+			</view>
+			<view class="inputname">
+				<!-- <text class="hintinfo">密   码：</text> -->
+				<input class="userinfo" type="password" v-model="userPassword" placeholder="请输入密码" />
+			</view>
+			<view class="inputname">
+				<!-- <text class="hintinfo">确认密码：</text> -->
+				<input class="userinfo" type="password" v-model="userPpassword"  placeholder="请确认密码" />
+			</view>
 		</view>
 		<view class="buttonSet">
 			<u-button @click="queryButton" :style="[buttonStyle]" class="button-LogReg">确认</u-button>
@@ -28,6 +31,16 @@
 	export default {
 		data() {
 			return {
+				userName:'',					//用户名
+				userRootKey:'',					//用户权限密钥
+				userAge:'',						//用户年龄
+				userEmail:'',					//用户邮箱
+				userGender:'',					//用户性别
+				userPassword:'',				//用户密码
+				userPpassword:'',				//用户第二次去人密码
+				genderList:["男","女"],			//用户性别列表
+				index:-1,						//下拉索引
+				
 				userName: '',			//用户名
 				userEmail:'',			//用户邮箱
 				newpassword:'',			//用户密码
@@ -45,6 +58,10 @@
 		methods: {
 			onLoad(){
 				
+			},
+			
+			clickGetCode(){
+				this.$u.toast("点击了获取验证码");
 			},
 			
 			cancelButton(){				//取消注册返回登陆界面
@@ -116,30 +133,71 @@
 		align-content: center;
 		width: 100%;
 		height: 100%;
+		
+		
+		.input-wrap{
+			width: 80%;
+		}
+		
+		.buttonSet{					//按钮父容器
+			flex-direction: row;
+			display: flex;
+		}
+		.inputname {
+			width: 100%;
+			flex-direction: row;
+			display: flex;
+			align-items: center;
+									//提示内容
+			// .hintinfo{
+			// 	width: 20%;
+			// 	margin-top: 20px;
+			// 	font-size: 12px;
+			// }
+								//输入内容
+			.userinfo{
+				width: 100%;
+				height: 2em;
+				background-color: #FFFFFF;
+				border-radius: 10px;
+				margin-top: 20px;
+				font-size: 14px;
+				padding-left: 3px;
+				border-style: groove;
+				-moz-box-shadow: inset 0 0 10px #CCC;
+				-webkit-box-shadow: inset 0 0 10px #CCC;
+				box-shadow: inset 0 0 10px #CCC;
+			}
+			
+			//账号栏
+			.userinfo-account{
+				width: 60%;
+				height: 2em;
+				background-color: #FFFFFF;
+				border-radius: 10px;
+				margin-top: 20px;
+				font-size: 14px;
+				padding-left: 3px;
+				border-style: groove;
+				-moz-box-shadow: inset 0 0 10px #CCC;
+				-webkit-box-shadow: inset 0 0 10px #CCC;
+				box-shadow: inset 0 0 10px #CCC;
+			}
+			.getCode{
+				width: 40%;
+				font-size: 16px;
+				margin-top: 20px;
+				text-align: center;
+				background-color: #0055ff;
+				height: 2em;
+			}
+		}
+		
 		.buttonSet{				//按钮
 			flex-direction: row;
 			display: flex;
 		}
-		.inputcomponent {		//输入框设置
-			width: 50%;
-			flex-direction: row;
-			display: flex;
-			.hintinfo{
-				width: 50%;
-				margin-top: 20px;
-				font-size: 12px;
-			}
-			.userinfo{			//输入提示
-				width: 60%;
-				background-color: #FFFFFF;
-				border-radius: 3px;
-				margin-top: 20px;
-				font-size: 12px;
-				-moz-box-shadow: inset 0 0 10px #CCC;//阴影
-				-webkit-box-shadow: inset 0 0 10px #CCC;
-				box-shadow: inset 0 0 10px #CCC;
-			}
-		}
+		
 		.button-LogReg{				//按钮集合
 			width: 40%;
 			height: 35px;
