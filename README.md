@@ -10,6 +10,15 @@
 ![image](https://user-images.githubusercontent.com/81294772/149989232-20929214-ad60-4a09-b14c-7e273db0bbd1.png)
 ![image](https://user-images.githubusercontent.com/81294772/150097818-98f8fffb-efa3-41a1-9945-05662a6bac2a.png)
 
+
+01月20日：---有事故进度减缓
+
+1、在测试版加入了社区分享图片详情页面----不完善
+
+![image](https://user-images.githubusercontent.com/81294772/150391846-0c3abff8-f8e9-4d47-9b21-55fc61ea221a.png)
+
+
+
 01月19日：---主要修改维护修改版本及3D_Hair_Final
 
 0、已在首页的顶部加入顶部按钮，但现在需要确定是否要将首页弄成滑动样式，确定原型之后直接修改，因为已知确定的页面功能较多，考虑是否放得下所有功能的问题
