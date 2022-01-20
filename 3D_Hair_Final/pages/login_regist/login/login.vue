@@ -297,6 +297,7 @@
 				width: 100%;
 				height: 2em;
 				border-radius: 10px;
+				border-style: groove;
 				background-color: #FFFFFF;
 				font-size: 14px;
 				color: #000000;
@@ -310,6 +311,7 @@
 				height: 2em;
 				background-color: #FFFFFF;
 				border-radius: 10px;
+				border-style: groove;
 				margin-top: 20px;
 				font-size: 14px;
 				color: #000000;

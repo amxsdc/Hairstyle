@@ -12,7 +12,7 @@
 			<view class="tab-bar">
 				<swiper class="swiper-box"  :current="tabIndex" @change="tabChange">
 					<swiper-item v-for="i in [0,1,2]" :key="i">
-						<scroll-view scroll-x="true" class="list">
+						<scroll-view scroll-y="true" class="list">
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
 							<!-- 分析结果等 -->
 							<view class="appDetail">
@@ -200,6 +200,24 @@
 		
 		//滑动显示容器
 		.tab-bar{
+			height: 300px;
+		}
+		.swiper-box{
+			/* height: 400px; */
+			height: 100%;
+		}
+		
+		.temp{
+			height: 100%;
+		}
+		.list{
+			width: 100%;
+			// height: 80px;
+			height: 100%;
+		}
+		.Tag{
+			margin-top: 20upx;
+			width: 100%;
 			height: 100%;
 		}
 	}

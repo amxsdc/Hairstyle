@@ -144,6 +144,7 @@
 	.take_wrap{
 		width: 100%;
 		bottom: 30px;
+		border-radius: 50%;
 		position: fixed;
 		display: flex;
 		justify-content: center;

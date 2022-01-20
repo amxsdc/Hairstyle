@@ -209,6 +209,23 @@
             }
             
         }
+        ,{
+            "path" : "pages/navigate_page/Home/hairCommunity/hairDetail/hairDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"rgba(0,0,0,0)",
+				"navigationBarTextStyle":"white",
+				"app-plus": {
+					"titleNView": {
+						"type": "float"
+						// "titleText": "过程分析"
+					}
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

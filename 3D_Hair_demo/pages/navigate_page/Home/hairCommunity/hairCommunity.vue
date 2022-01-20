@@ -5,7 +5,7 @@
 			<swiperTabHead class="Tag" :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></swiperTabHead>
 			<view class="tab-bar">
 				<swiper class="swiper-box"  :current="tabIndex" @change="tabChange">
-					<swiper-item v-for="i in [0,1,2,3,4]" :key="i">
+					<swiper-item v-for="i in [0,1,2,3,4]" :key="i" class="temp">
 						<scroll-view scroll-y="true" class="list">
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
 							<view v-for="i in 10" :key="i" style="display: flex; flex-direction: row; margin-top:10px;">
@@ -13,16 +13,17 @@
 									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i)%4]"></image>
 									<view class="tips-date">
 										<text class="userCount">120人使用</text>
-										<text class="clickTry" @click="clickTry">点击试戴</text>				
+										<text class="clickTry" @click="clickTry">收藏发型</text>				
 									</view>
-									<text class="hairTypeIntroduction">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
+									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
 								</view>
 								<view class="recommand">
 									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i+2)%4]"></image>
 									<view class="tips-date">
 										<text class="userCount">12人使用</text>
-										<text class="clickTry" @click="clickTry">点击试戴</text>				
+										<text class="clickTry" @click="clickTry">收藏发型</text>				
 									</view>
+									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
 								</view>
 							</view>
 						</scroll-view> 
@@ -51,7 +52,7 @@
 				],
 				
 				//图片
-				recommandHair:["../../../../static/recommand1.png","../../../../static/recommand2.png",
+				recommandHair:["../../../../static/kid.png","../../../../static/kid.png",
 						"../../../../static/head_man1.png","../../../../static/head_man2.png"]
 			}
 		},
@@ -67,10 +68,13 @@
 			
 			//点击推荐
 			clickPost(){
-				this.$u.toast("点击了推荐")
+				this.$u.toast("点击了详情")
+				uni.navigateTo({
+					url: "hairDetail/hairDetail"
+				})
 			},
 			clickTry(){
-				this.$u.toast("点击了试戴")
+				this.$u.toast("点击了收藏")
 			}
 		},
 		
@@ -95,12 +99,16 @@
 	}
 	.tab-bar{
 		width: 100%;
-		height: 100%;
+		height: 800px;
 	}
 	.swiper-box{
-		
+		/* height: 400px; */
+		height: 100%;
 	}
 	
+	.temp{
+		height: 100%;
+	}
 	.list{
 		width: 100%;
 		// height: 80px;

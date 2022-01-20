@@ -16,7 +16,7 @@
 			<view class="tab-bar">
 				<swiper class="swiper-box"  :current="tabIndex" @change="tabChange">
 					<swiper-item v-for="i in [0,1,2,3,4]" :key="i">
-						<scroll-view scroll-x="true" class="list">
+						<scroll-view scroll-y="true" class="list">
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
 							<view class="resource" v-for="i in 10" :key="i">
 								<view class="resource-wrap">
