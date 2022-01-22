@@ -11,6 +11,12 @@
 ![image](https://user-images.githubusercontent.com/81294772/150097818-98f8fffb-efa3-41a1-9945-05662a6bac2a.png)
 
 
+01月22日：-------测试版，解决社区分享图片详情页面展示高度（将绝对高度换为屏幕高度，加入滑动窗口，可左右翻阅图片
+
+![image](https://user-images.githubusercontent.com/81294772/150646107-13d87e33-7b41-4126-a94b-a3783734fb86.png)
+
+
+
 01月20日：---有事故进度减缓
 
 1、在测试版加入了社区分享图片详情页面----不完善
