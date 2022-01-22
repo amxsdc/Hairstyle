@@ -85,7 +85,7 @@
 				duration: 500,
 				
 				//图片
-				recommandHair:["../../../static/recommand1.png","../../../static/recommand2.png",
+				recommandHair:["../../../static/kid.png","../../../static/kid2.png",
 						"../../../static/head_man1.png","../../../static/head_man2.png"]
 			}
 		},
@@ -171,11 +171,12 @@
 			},
 			//点击推荐
 			clickPost(){
-				this.$u.toast("点击了推荐")
+				this.$u.toast("点击了推荐");
 			},
 			clickTry(){
-				this.$u.toast("点击了试戴")
-			}
+				console.log("q")
+				this.$u.toast("点击了试戴");
+			},
 		},
 		
 		//组件注册

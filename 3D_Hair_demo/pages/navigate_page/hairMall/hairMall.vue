@@ -41,8 +41,8 @@
 	export default {
 		data() {
 			return {
-				recommandHair:["../../../static/recommand1.png","../../../static/recommand2.png",
-						"../../../static/head_man1.png","../../../static/head_man2.png"],
+				recommandHair:["../../../static/recommand1.png","../../../static/kid.png",
+						"../../../static/head_man1.png","../../../static/kid4.png"],
 						
 				//banner
 				indicatorDots: true,

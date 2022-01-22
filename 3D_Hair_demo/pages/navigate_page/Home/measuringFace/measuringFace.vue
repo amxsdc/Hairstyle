@@ -200,7 +200,7 @@
 		
 		//滑动显示容器
 		.tab-bar{
-			height: 300px;
+			height: 200px;
 		}
 		.swiper-box{
 			/* height: 400px; */
