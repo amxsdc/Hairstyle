@@ -16,6 +16,13 @@
 ![image](https://user-images.githubusercontent.com/81294772/150646107-13d87e33-7b41-4126-a94b-a3783734fb86.png)
 
 
+01月25日：
+
+1、更新了新版本3D_Hair_Final_2，更新了注册页面的UI
+
+![image](https://user-images.githubusercontent.com/81294772/150910914-efd10586-b738-409e-a6eb-3bee88b2613d.png)
+
+
 
 01月20日：---有事故进度减缓
 
