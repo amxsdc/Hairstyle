@@ -82,7 +82,15 @@
         }
         ,{
             "path" : "pages/navigate_page/mine/mine",
-            "style" : {}
+            "style" : {
+				"navigationBarBackgroundColor":"rgba(0,0,0,0)",
+				"navigationBarTextStyle":"white",
+				"app-plus":{
+					"titleNView":{
+						"type":"float"
+					}
+				}
+			}
         }
         ,{
             "path" : "pages/navigate_page/mine/myComment/myComment",

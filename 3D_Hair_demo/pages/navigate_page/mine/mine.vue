@@ -6,9 +6,12 @@
 		<view class="bgContent">
 			<view class="myPhoto">
 				<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../../static/header-cabbit.png"></image>
-				<text class="userName" @click="changeH_N(2)">兔子1号</text>
+				<view class="userName" @click="changeH_N(2)">
+					<text class="userText">昵称：兔子1号</text>
+					<text class="userText">I D：123456</text>
+				</view>
 			</view>
-			<image class="bgPhoto" @click="changeBgImage" mode="aspectFill" src="../../../static/campus.png"></image>
+			<image class="bgPhoto" @click="changeBgImage" mode="bottom" src="../../../static/bg_2.png"></image>
 		</view>
 		<view class="APIset">
 			<view class="APIRow">
@@ -126,19 +129,20 @@
 	.bgContent{
 		background-color: #f3f2f0;
 		display: flex;
-		height: 150px;
-		overflow: hidden;
+		height: 175px;
+		/* overflow: hidden; */
 		flex-direction: row;
 		justify-content: center;
-		border-radius: 5px;
+		border-radius: 0px;
 	}
 	.myPhoto{
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		margin-bottom: 5px;
 	}
 	.bgPhoto{
-		filter: blur(5rpx) brightness(70%);//模糊半径和变暗度
+		/* filter: blur(5rpx) brightness(70%);//模糊半径和变暗度 */
 	}
 	.header-photo{
 		margin-left: 20px;
@@ -155,6 +159,12 @@
 		color: #FFFFFF;
 		font-size: 16px;
 		margin-left: 80px;
+		display: flex;
+		flex-direction: column;
+	}
+	.userText{
+		font-size: 14px;
+		margin-top: 5px;
 	}
 	
 	/* API按钮 */
@@ -164,7 +174,7 @@
 		box-shadow: 0px 0px 0px 2px #f0fff2;
 	}
 	.APIRow{
-		height: 100rpx;
+		height: 120rpx;
 		/* flex: 1; */
 		margin-top: 20px;
 		display: flex;
