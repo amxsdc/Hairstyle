@@ -2,6 +2,15 @@
 
 **最新更新-01月19日--见文中【效果示例】之后**
 
+demo版0127：
+
+1、在发型社区添加收藏优化------目前未解决动态渲染问题，点击收藏的效果不好----此为自定义实现，实在不行直接用组件
+
+![image](https://user-images.githubusercontent.com/81294772/151478977-3d677e2a-4574-48b6-9c74-baf229b9ad5e.png)
+![image](https://user-images.githubusercontent.com/81294772/151479022-2e398d0d-681c-4017-9d10-4f82de25aec9.png)
+
+
+
 【前端效果示例】--左为草稿版，右为修改版
 
 ![image](https://user-images.githubusercontent.com/81294772/149989348-d357508e-18ee-40ef-a421-b42fa0908f86.png)
