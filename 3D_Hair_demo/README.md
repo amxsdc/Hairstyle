@@ -1,5 +1,14 @@
 前端分支--TangYingfu---由于界面过于简陋和功能实现技术性太差，正考虑界面优化，但由于UI感太差，我先实现功能，后期继续完成界面迁移和优化。
 
+0127：
+
+1、发型社区收藏优化---未完全实现---效果不好可考虑封装组件
+
+![image](https://user-images.githubusercontent.com/81294772/151479328-f73315c1-681e-48a3-a7bb-94e516da0959.png)
+![image](https://user-images.githubusercontent.com/81294772/151479287-3b7946dd-796d-4f2a-a2de-20fcc6b26a2b.png)
+
+
+
 0127:-----测试版，优化个人信息界面
 
 1、修改背景问题，为了达到美化效果，可以使用CSS实现波浪线效果；也可以直接使用图片来固定样式------这里我采用第二种，并把图片的模式设置为bottom并取消CSS的overfloe样式。
