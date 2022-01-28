@@ -87,7 +87,18 @@
 				"navigationBarTextStyle":"white",
 				"app-plus":{
 					"titleNView":{
-						"type":"float"
+						"type":"float",
+						
+						"buttons": [
+							{
+								"text": "我的",
+								// "text":"\ue532",
+								"color":"#ff5500",
+								// "fontSrc": "/static/post.png",
+								"fontSize": "12px",
+								"float":"right"
+							}
+						]
 					}
 				}
 			}

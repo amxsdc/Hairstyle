@@ -21,8 +21,8 @@
 		<view class="APIset">
 			<view class="APIRow">
 				<view v-for="i in [0,1,2,3]" :key='i' class="temp-wrap">
-					<view class="button-icon-temp">
-						<view class="button-icon" @click="clickAPI(i)">
+					<view class="button-icon-temp" @click="clickAPI(i)">
+						<view class="button-icon">
 							<image class="button" :src="icon[i]"></image>
 							<text class="APIname">{{APIname[i]}}</text>
 						</view>
@@ -272,6 +272,7 @@
 		justify-content: center;
 	}
 	.button-icon{
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -5,7 +5,7 @@
 			<swiperTabHead class="Tag" :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></swiperTabHead>
 			<view class="tab-bar">
 				<swiper class="swiper-box"  :current="tabIndex" @change="tabChange">
-					<swiper-item v-for="i in [0,1,2,3,4]" :key="i" class="temp">
+					<swiper-item v-for="j in [0,1,2,3,4]" :key="j" class="temp">
 						<scroll-view scroll-y="true" class="list">
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
 							<view v-for="i in 10" :key="i" style="display: flex; flex-direction: row; margin-top:10px;">
@@ -13,7 +13,13 @@
 									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i)%4]"></image>
 									<view class="tips-date">
 										<text class="userCount">120人使用</text>
-										<text class="clickTry" @click="clickTry">收藏发型</text>				
+										<view class="collect-wrap" @click="clickTry(1,i)">
+											<!-- <image class="collect" :src="collect_left[i-1]==1?collect_non_img:collect_img"></image> -->
+											<image v-if="collect_left[i-1]==0" class="collect" :src="collect_img"></image>
+											<image v-else class="collect" :src="collect_non_img"></image>
+											<text class="collect-text">收藏</text>
+										</view>
+										<!-- <text class="clickTry" @click="clickTry">收藏发型</text> -->
 									</view>
 									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
 								</view>
@@ -21,7 +27,12 @@
 									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i+2)%4]"></image>
 									<view class="tips-date">
 										<text class="userCount">12人使用</text>
-										<text class="clickTry" @click="clickTry">收藏发型</text>				
+										<view class="collect-wrap" @click="clickTry(2,i)">
+											<image v-if="collect_right[i-1]==0" class="collect" :src="collect_img"></image>
+											<image v-else class="collect" :src="collect_non_img"></image>
+											<text class="collect-text">收藏</text>
+										</view>
+										<!-- <text class="clickTry" @click="clickTry">收藏发型</text>				 -->
 									</view>
 									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
 								</view>
@@ -53,7 +64,17 @@
 				
 				//图片
 				recommandHair:["../../../../static/kid.png","../../../../static/kid.png",
-						"../../../../static/head_man1.png","../../../../static/head_man2.png"]
+						"../../../../static/head_man1.png","../../../../static/head_man2.png"],
+						
+				collect_non_img: "../../../../static/collect_non.png",
+				collect_img: "../../../../static/collect.png",
+				collect_left: [
+					0,0,0,0,0,0,0,0,0,0
+					],
+				collect_right: [
+					0,0,0,0,0,0,0,0,0,0
+					],
+				t: 0
 			}
 		},
 		methods: {
@@ -73,8 +94,18 @@
 					url: "hairDetail/hairDetail"
 				})
 			},
-			clickTry(){
-				this.$u.toast("点击了收藏")
+			clickTry(type, index){
+				var _this=this;
+				this.$u.toast("点击了收藏"+index+" "+_this.collect_left[index-1]);
+				if(type==1){
+					_this.collect_left[index-1]==1?
+							(_this.collect_left[index-1]=0):
+							(_this.collect_left[index-1]=1);
+					
+				}
+				else{
+					this.collect_right[index-1]=(this.collect_right[index-1]+1)%2;
+				}
 			}
 		},
 		
@@ -143,7 +174,7 @@
 		padding-left: 10px;
 		padding-top: 3px;
 	}
-	.clickTry{
+	/* .clickTry{
 		flex: 1;
 		text-align: right;
 		display: flex;
@@ -152,7 +183,21 @@
 		padding-right: 10px;
 		border-radius: 5px;
 		background-color: #ff5500;
+	} */
+	//收藏
+	.collect-wrap{
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 14px;
 	}
+	.collect{
+		/* flex: 1; */
+		width: 16px;
+		height: 16px;
+	}
+	
 	.userCount{
 		flex: 1;
 		font-size: 12px;

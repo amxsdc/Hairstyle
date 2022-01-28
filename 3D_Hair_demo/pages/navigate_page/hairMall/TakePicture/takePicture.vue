@@ -109,11 +109,12 @@
 		align-items: center;
 	}
 	.img{
-		border-radius: 5px;
+		border-radius: 10px;
+		border-style: groove;
 		/* width: 72px;
 		height: 72px; */
-		/* width: 100%;
-		height: 80%; */
+		width: 80%;
+		/* height: 80%; */
 	}
 	//背景图片
 	.bgimg{
