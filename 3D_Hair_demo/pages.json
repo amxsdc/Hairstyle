@@ -27,7 +27,7 @@
 		{
 			"path": "pages/navigate_page/Home/home",
 			"style": {
-				"navigationBarTitleText": "我的主页",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [

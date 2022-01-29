@@ -8,33 +8,30 @@
 					<swiper-item v-for="j in [0,1,2,3,4]" :key="j" class="temp">
 						<scroll-view scroll-y="true" class="list">
 							<!-- <image src="../../../../static/takePhoto.png"></image> -->
-							<view v-for="i in 10" :key="i" style="display: flex; flex-direction: row; margin-top:10px;">
+							<view v-for="i in Math.round(recommandHairJson.length/2)" :key="recommandHairJson[i-1].id" style="display: flex; flex-direction: row; margin-top:10px;">
 								<view class="recommand">
-									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i)%4]"></image>
+									<image class="recommand_img" @click="clickPost" :src="recommandHairJson[i-1].src"></image>
 									<view class="tips-date">
 										<text class="userCount">120人使用</text>
-										<view class="collect-wrap" @click="clickTry(1,i)">
-											<!-- <image class="collect" :src="collect_left[i-1]==1?collect_non_img:collect_img"></image> -->
-											<image v-if="collect_left[i-1]==0" class="collect" :src="collect_img"></image>
-											<image v-else class="collect" :src="collect_non_img"></image>
+										<view class="collect-wrap" @click="clickTry(1,recommandHairJson[i-1].id)">
+											<image class="collect" :src="recommandHairJson[i-1].s==0?collect_non_img:collect_img"></image>
 											<text class="collect-text">收藏</text>
 										</view>
 										<!-- <text class="clickTry" @click="clickTry">收藏发型</text> -->
 									</view>
-									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
+									<text class="hairTypeIntroduction" @click="clickPost">{{recommandHairJson[i-1].txt}}</text>
 								</view>
-								<view class="recommand">
-									<image class="recommand_img" @click="clickPost" :src="recommandHair[(i+2)%4]"></image>
+								<view class="recommand" v-if="(i+(Math.round(recommandHairJson.length/2)))<=recommandHairJson.length">
+									<image class="recommand_img" @click="clickPost" :src="recommandHairJson[i+(Math.round(recommandHairJson.length/2))-1].src"></image>
 									<view class="tips-date">
 										<text class="userCount">12人使用</text>
-										<view class="collect-wrap" @click="clickTry(2,i)">
-											<image v-if="collect_right[i-1]==0" class="collect" :src="collect_img"></image>
-											<image v-else class="collect" :src="collect_non_img"></image>
+										<view class="collect-wrap" @click="clickTry(2,recommandHairJson[i+(Math.round(recommandHairJson.length/2))-1].id)">
+											<image class="collect" :src="recommandHairJson[i+(Math.round(recommandHairJson.length/2))-1].s==0?collect_non_img:collect_img"></image>
 											<text class="collect-text">收藏</text>
 										</view>
 										<!-- <text class="clickTry" @click="clickTry">收藏发型</text>				 -->
 									</view>
-									<text class="hairTypeIntroduction" @click="clickPost">此发型是怎样怎样怎眼的测试文本测试文本测试文本</text>
+									<text class="hairTypeIntroduction" @click="clickPost">{{recommandHairJson[i-1].txt}}</text>
 								</view>
 							</view>
 						</scroll-view> 
@@ -65,17 +62,21 @@
 				//图片
 				recommandHair:["../../../../static/kid.png","../../../../static/kid.png",
 						"../../../../static/head_man1.png","../../../../static/head_man2.png"],
+				recommandHairJson:[
+								{src:"../../../../static/kid.png",s:0,txt:"测试文本1\n测试文本1\n",id:0},
+								{src:"../../../../static/kid2.png",s:0,txt:"测试文本2\n测试文本2",id:1},
+								{src:"../../../../static/kid3.png",s:0,txt:"测试文本3\n测试文本3",id:2},
+								{src:"../../../../static/kid4.png",s:0,txt:"测试文本4\n测试文本4",id:3},
+								{src:"../../../../static/kid4.png",s:0,txt:"测试文本5\n测试文本5\n",id:4},
+								{src:"../../../../static/kid3.png",s:0,txt:"测试文本6\n测试文本6",id:5},
+								{src:"../../../../static/kid.png",s:0,txt:"测试文本7\n测试文本7",id:6},],
 						
 				collect_non_img: "../../../../static/collect_non.png",
 				collect_img: "../../../../static/collect.png",
-				collect_left: [
-					0,0,0,0,0,0,0,0,0,0
-					],
-				collect_right: [
-					0,0,0,0,0,0,0,0,0,0
-					],
-				t: 0
 			}
+		},
+		onLoad(){
+			// this.$u.toast(""+Math.round(5/2));
 		},
 		methods: {
 			//接受子组件传过来的值点击切换导航
@@ -96,16 +97,11 @@
 			},
 			clickTry(type, index){
 				var _this=this;
-				this.$u.toast("点击了收藏"+index+" "+_this.collect_left[index-1]);
-				if(type==1){
-					_this.collect_left[index-1]==1?
-							(_this.collect_left[index-1]=0):
-							(_this.collect_left[index-1]=1);
-					
-				}
-				else{
-					this.collect_right[index-1]=(this.collect_right[index-1]+1)%2;
-				}
+				
+				_this.recommandHairJson[index].s==1?
+											_this.recommandHairJson[index].s=0:
+											_this.recommandHairJson[index].s=1;
+				return;
 			}
 		},
 		
@@ -203,6 +199,7 @@
 		font-size: 12px;
 	}
 	.recommand_img{
+		flex: 1;
 		width: 100%;
 		height: 90%;
 		border-radius: 10px;
@@ -212,8 +209,10 @@
 	.hairTypeIntroduction{
 		color: #000000;
 		margin: 5px;
+		height: 4em;
 		border-style: groove;
 		border-radius: 3px;
+		padding: 2px;
 		overflow: hidden;
 	}
 </style>

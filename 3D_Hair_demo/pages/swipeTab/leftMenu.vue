@@ -1,51 +1,56 @@
 <template>
-	<view>
-		<image @click="open" class="drawer-head-menu" src="../../static/leftMenu.png" mode="scaleToFill" />
+	<view class="content-wrap">
+		<view class="myInfo-wrap" @click="open">
+			<view class="info-wrap">
+				<image class="drawer-head-menu" src="../../static/header-cabbit.png" mode="scaleToFill" />
+				<text class="nick">兔子一号</text>
+			</view>
+		</view>
 		<view @touchstart="touchStart" @touchend="touchEnd">
 			<!-- 遮罩层 -->
 			<view class="drawer-mask" :class="{ 'drawer-mask-visible': stateDrawer }" @tap="close()" />
 			<!-- 内容列表 -->
 			<view class="drawer-content" :class="{ 'drawer-content-visible': stateDrawer}">
-				<scroll-view style="height: 100%;" scroll-y="true">
+				<scroll-view style="width: 100%; height: 100%;" scroll-y="true">
 					<!-- <view v-for="item in 30" :key="item" @click="selectItem(item)">可滚动内容 {{ item }}</view> -->
 				<!-- </scroll-view> -->
-				<view class="content">
-					<!-- 背景图片 -->
-					<!-- <image class="bgimg"></image> -->
-					
-					<view class="bgContent">
-						<view class="myPhoto">
-							<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../static/header-cabbit.png"></image>
-							<text class="userName" @click="changeH_N(2)">兔子1号</text>
+					<view class="content">
+						<view class="bgContent">
+							<view class="myPhoto">
+								<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../static/header-cabbit.png"></image>
+								<view class="userName" @click="changeH_N(2)">
+									<text class="userText">昵称：兔子1号</text>
+									<text class="userText">I D：123456</text>
+								</view>
+							</view>
+							<image class="bgPhoto" @click="changeBgImage" mode="bottom" src="../../static/bg_2.png"></image>
 						</view>
-						<image class="bgPhoto" @click="changeBgImage" mode="aspectFill" src="../../static/campus.png"></image>
-					</view>
-					<view class="APIset">
-						<view class="APIRow">
-							<view v-for="i in [0,1]" :key='i' class="temp-wrap">
-								<view class="button-icon-temp">
-									<view class="button-icon" @click="clickAPI(i)">
-										<image class="button" :src="icon[i]"></image>
-										<text class="APIname">{{APIname[i]}}</text>
+						<view class="APIset">
+							<view class="APIRow">
+								<view v-for="i in [0,1]" :key='i' class="temp-wrap">
+									<view class="button-icon-temp">
+										<view class="button-icon" @click="clickAPI(i)">
+											<image class="button" :src="icon[i]"></image>
+											<text class="APIname">{{APIname[i]}}</text>
+										</view>
 									</view>
 								</view>
 							</view>
 						</view>
-					</view>
-					
-					<!-- 注意事项等 -->
-					<view class="appDetail">
-						<view class="detailButton" v-for="i in [0,1,2,3,4]" :key="i" @click="clickDetail(i)">
-							<image class="buttonIcon" :src="buttonIcon[i]"></image>
-							<text class="buttonText">{{detailButton[i]}}</text>
+						
+						<!-- 注意事项等 -->
+						<view class="appDetail">
+							<view class="detailButton" v-for="i in [0,1,2,3,4]" :key="i" @click="clickDetail(i)">
+								<image class="buttonIcon" :src="buttonIcon[i]"></image>
+								<text class="buttonText">{{detailButton[i]}}</text>
+							</view>
+						</view>
+						
+						<!-- 版权 -->
+						<view class="copyright">
+							<text>@Copyright Of 3D小组</text>
 						</view>
 					</view>
-					
-					<!-- 版权 -->
-					<view class="copyright">
-						<text>@Copyright Of 3D小组</text>
-					</view>
-				</view>
 				</scroll-view>
 			</view>
 		</view>
@@ -78,6 +83,7 @@
 			}
 		},
 		created() {
+			
 		},
 		methods: {
 			close() {
@@ -174,13 +180,37 @@
 </script>
  
 <style scoped>
+	.content-wrap{
+		width: 100%;
+		height: 100%;
+	}
 	/* 侧滑菜单 外部按钮 */
-	.drawer-head-menu{
+	.myInfo-wrap{
 		display: inline-block;
 		position: fixed;
 		top: 6px;
 		left: 10px;
 		z-index: 999;
+	}
+	.info-wrap{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.nick{
+		margin-left: 5px;
+		color: #0000FF;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.drawer-head-menu{
+		/* display: inline-block;
+		position: fixed; */
+		border-radius: 50%;
+		/* top: 6px;
+		left: 10px; *//* 
+		z-index: 999; */
 		width:64rpx;
 		height: 64rpx;
 	}
@@ -190,13 +220,14 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 65%;
+		width: 70%;
 		bottom: 0;
 		z-index: 33;
 		background-color: rgba(255, 255, 255, 1);
-		padding: 20rpx 30rpx;
+		/* padding: 20rpx 30rpx; */
+		/* padding-right: 30rpx; */
 		box-sizing: border-box;
-		transform: translateX(calc(-100% + 20rpx));
+		transform: translateX(calc(-100%));
 		transition: transform 0.3s ease;
 	}
 	.drawer-content-visible {
@@ -222,11 +253,58 @@
 	.drawer-content view{
 		/* font-size: 16px; */
 		line-height: 1.5;
-		margin-top: 10px;
+		/* margin-top: 10px; */
 		margin-bottom: 10px;
 	}
 	
+	.content{
+		width: 100%;
+		height: 100%;
+	}
 	.bgContent{
+		width: 100%;
+		height: 100%;
+		background-color: #f3f2f0;
+		display: flex;
+		height: 175px;
+		/* overflow: hidden; */
+		flex-direction: row;
+		justify-content: center;
+		border-radius: 0px;
+	}
+	.myPhoto{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		margin-bottom: 5px;
+	}
+	.bgPhoto{
+		/* z-index: -1; */
+		/* filter: blur(5rpx) brightness(70%);//模糊半径和变暗度 */
+	}
+	.header-photo{
+		margin-left: 20px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		position: absolute;
+		z-index: 2;
+		box-shadow: 0px 0px 2px 2px #0000ff;
+	}
+	.userName{
+		position: absolute;
+		z-index: 2;
+		color: #FFFFFF;
+		font-size: 16px;
+		margin-left: 80px;
+		display: flex;
+		flex-direction: column;
+	}
+	.userText{
+		font-size: 14px;
+		margin-top: 5px;
+	}
+	/* .bgContent{
 		background-color: #f3f2f0;
 		display: flex;
 		height: 150px;
@@ -258,7 +336,7 @@
 		color: #FFFFFF;
 		font-size: 16px;
 		margin-left: 80px;
-	}
+	} */
 	
 	/* API按钮 */
 	.APIset{
@@ -296,6 +374,7 @@
 	.APIname{
 		font-size: 14px;
 		font-weight: bold;
+		z-index: 1;
 	}
 	
 	/* detail按钮 */
