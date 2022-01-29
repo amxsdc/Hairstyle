@@ -1,6 +1,17 @@
 前端分支--Tangyingfu---此为总目录，详细请进入小目录查看或阅读文末项目结构。
 
-**最新更新-01月19日--见文中【效果示例】之后**
+**最新更新-01月30日--见文中【效果示例】之后**
+
+demo版0129：
+
+1、解决发型社区收藏的动态效果；修改主页的页面---修改左侧菜单并添加个性右侧导航栏按钮
+
+![image](https://user-images.githubusercontent.com/81294772/151668653-4e65199f-3993-4cbc-b061-92de59c66a4c.png)
+![image](https://user-images.githubusercontent.com/81294772/151668704-d3b3c907-e7c1-4c1f-a0c2-9d1e86740e41.png)
+![image](https://user-images.githubusercontent.com/81294772/151668716-95edf0b5-b7b4-4059-802c-d7fc27fa59ce.png)
+
+
+
 
 demo版0127：
 
