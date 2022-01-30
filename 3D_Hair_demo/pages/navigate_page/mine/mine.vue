@@ -142,6 +142,7 @@
 		margin-bottom: 5px;
 	}
 	.bgPhoto{
+		width: 100%;
 		/* filter: blur(5rpx) brightness(70%);//模糊半径和变暗度 */
 	}
 	.header-photo{

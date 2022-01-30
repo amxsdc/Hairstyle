@@ -225,7 +225,7 @@
 	.myInfo-wrap{
 		display: inline-block;
 		position: fixed;
-		top: 8px;
+		top: 70rpx;
 		right: 40px;
 		z-index: 999;
 	}
@@ -248,6 +248,7 @@
 	
 	//banner
 	.swiperContent{
+		margin-top: 70px;
 		background-color: #f3f2f0;
 		padding-bottom: 10px;
 		display: flex;

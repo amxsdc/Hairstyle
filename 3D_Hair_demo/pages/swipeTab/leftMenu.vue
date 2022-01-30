@@ -188,8 +188,8 @@
 	.myInfo-wrap{
 		display: inline-block;
 		position: fixed;
-		top: 6px;
-		left: 10px;
+		top: 70rpx;
+		left: 0px;
 		z-index: 999;
 	}
 	.info-wrap{

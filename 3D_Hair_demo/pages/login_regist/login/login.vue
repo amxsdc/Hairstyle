@@ -299,9 +299,10 @@
 			}
 			.userName{			//用户名
 				width: 100%;
+				height: 2em;
 				border-radius: 3px;
 				background-color: #FFFFFF;
-				font-size: 14px;
+				font-size: 16px;
 				color: #000000;
 				-moz-box-shadow: inset 0 0 10px #CCC;
 				-webkit-box-shadow: inset 0 0 10px #CCC;
@@ -309,6 +310,7 @@
 			}
 			.userPassword{		//密码
 				width: 100%;
+				height: 2em;
 				background-color: #FFFFFF;
 				border-radius: 3px;
 				margin-top: 20px;
@@ -328,7 +330,8 @@
 		.button-LogReg{			//注册和登录按钮
 			width: 40%;
 			height: 35px;
-			font-size: 14px;
+			font-size: 16px;
+			font-weight: bold;
 			margin-top: 60px;
 		}
 		.title {				//页面标题
