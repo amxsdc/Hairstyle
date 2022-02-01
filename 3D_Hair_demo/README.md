@@ -1,5 +1,14 @@
 前端分支--TangYingfu---由于界面过于简陋和功能实现技术性太差，正考虑界面优化，但由于UI感太差，我先实现功能，后期继续完成界面迁移和优化。
 
+0201：
+
+1、修改我的页面---添加我的资料初版
+
+![image](https://user-images.githubusercontent.com/81294772/151920901-c101c800-4380-4680-b36c-51a5def680ad.png)
+![image](https://user-images.githubusercontent.com/81294772/151920920-6e5d0d0a-f405-4d35-9761-a0655600e2c7.png)
+
+
+
 0130：
 
 1、解决android端导航栏透明失效的问题----------尝试使用three.js展示3D模型---暂时失败
