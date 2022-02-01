@@ -4,9 +4,12 @@
 		<leftMenu></leftMenu>
 		
 		<!-- 右上角按钮 -->
-		<view class="myInfo-wrap" @click="myInfo">
-			<view class="info-wrap">
-				<image class="drawer-head-menu" src="../../../static/myInfo.png" mode="scaleToFill" />
+		<view class="statusBar">
+			<view class="myInfo-wrap">
+				<view class="info-wrap">
+					<image class="drawer-head-menu" @click="myInfo(1)" src="../../../static/myInfo.png" mode="scaleToFill" />
+					<image class="drawer-head-menu" @click="myInfo(2)" src="../../../static/add.png" mode="scaleToFill" />
+				</view>
 			</view>
 		</view>
 		
@@ -100,15 +103,15 @@
 		},
 		//导航栏按钮点击事件
 		onNavigationBarButtonTap(button) {
-			uni.showToast({
-				title:button.text=="预约"?"点击预约":"点击退出",
-				icon:"none"
-			})
-			if(button.text="退出"){
-				uni.redirectTo({
-					url:"../../login_regist/login/login",
-				})
-			}
+			// uni.showToast({
+			// 	title:button.text=="预约"?"点击预约":"点击退出",
+			// 	icon:"none"
+			// })
+			// if(button.text="退出"){
+			// 	uni.redirectTo({
+			// 		url:"../../login_regist/login/login",
+			// 	})
+			// }
 		},
 		onLoad(){
 			var _this=this
@@ -132,8 +135,13 @@
 		},
 		methods: {
 			//我的右侧按钮
-			myInfo(){
-				this.$u.toast("点击了右侧导航按钮");
+			myInfo(type){
+				if(type==1){
+					this.$u.toast("点击了右侧状态按钮");
+				}
+				else if(type==2){
+					this.$u.toast("点击了右侧预约按钮");
+				}
 			},
 			
 			//轮播图点击事件
@@ -207,8 +215,8 @@
 			clickPost(){
 				this.$u.toast("点击了推荐");
 			},
+			
 			clickTry(){
-				console.log("q")
 				this.$u.toast("点击了试戴");
 			},
 		},
@@ -221,12 +229,21 @@
 </script>
 
 <style>
+	//状态栏
+	.statusBar{
+		width: 100%;
+		height: 70px;
+		position: fixed;
+		top: 0;
+		background-color: #ffffff;
+		z-index: 998;
+	}
 	//右上角按钮
 	.myInfo-wrap{
 		display: inline-block;
 		position: fixed;
 		top: 70rpx;
-		right: 40px;
+		right: 10rpx;
 		z-index: 999;
 	}
 	.info-wrap{
@@ -242,6 +259,7 @@
 		/* top: 6px;
 		left: 10px; *//* 
 		z-index: 999; */ 
+		margin-right: 3px;
 		width:64rpx;
 		height: 64rpx;
 	}
@@ -289,9 +307,12 @@
 		flex-direction: row;
 		padding-left: 10px;
 		padding-top: 3px;
+		z-index: 2;
 	}
 	.clickTry{
 		flex: 1;
+		height: 1.5em;
+		text-align: center;
 		text-align: right;
 		padding-right: 10px;
 		border-radius: 5px;

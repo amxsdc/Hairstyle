@@ -108,7 +108,7 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/navigate_page/mine/myVoice/myVoice",
+            "path" : "pages/navigate_page/mine/myData/myData",
             "style" : {
 				"backgroundColor":"#53ACD5"
 			}

@@ -3,6 +3,16 @@
 		<!-- 背景图片 -->
 		<!-- <image class="bgimg"></image> -->
 		
+		<!-- 右上角按钮 -->
+		<view class="statusBar">
+			<view class="myInfo-wrap">
+				<view class="info-wrap">
+					<image class="drawer-head-menu" @click="myInfo(1)" src="../../../static/myInfo.png" mode="scaleToFill" />
+					<image class="drawer-head-menu" @click="myInfo(2)" src="../../../static/add.png" mode="scaleToFill" />
+				</view>
+			</view>
+		</view>
+		
 		<view class="bgContent">
 			<view class="myPhoto">
 				<image class="header-photo" @click="changeH_N(1)" mode="aspectFit" src="../../../static/header-cabbit.png"></image>
@@ -62,6 +72,15 @@
 			})
 		},
 		methods: {
+			//我的右侧按钮
+			myInfo(type){
+				if(type==1){
+					this.$u.toast("点击了右侧状态按钮");
+				}
+				else if(type==2){
+					this.$u.toast("点击了右侧预约按钮");
+				}
+			},
 			//更换头像或昵称
 			changeH_N(index){
 				uni.showToast({
@@ -97,7 +116,7 @@
 				this.$u.toast("点击了"+this.detailButton[index]);
 				if(index==0){
 					uni.navigateTo({
-						url:'',
+						url:'./myData/myData',
 					});
 					return;
 				}
@@ -125,6 +144,41 @@
 		/* z-index: -1; */
 		/* position: fixed; */
 	/* } */
+	
+	//状态栏
+	.statusBar{
+		/* width: 100%;
+		height: 70px;
+		position: fixed;
+		top: 0;
+		background-color: #ffffff;
+		z-index: 998; */
+	}
+	//右上角按钮
+	.myInfo-wrap{
+		display: inline-block;
+		position: absolute;
+		top: 70rpx;
+		right: 10rpx;
+		z-index: 999;
+	}
+	.info-wrap{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.drawer-head-menu{
+		/* display: inline-block;
+		position: fixed; */
+		border-radius: 50%;
+		/* top: 6px;
+		left: 10px; *//* 
+		z-index: 999; */ 
+		margin-right: 3px;
+		width:64rpx;
+		height: 64rpx;
+	}
 	
 	.bgContent{
 		background-color: #f3f2f0;

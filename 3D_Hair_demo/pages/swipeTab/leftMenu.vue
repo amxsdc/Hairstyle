@@ -189,7 +189,7 @@
 		display: inline-block;
 		position: fixed;
 		top: 70rpx;
-		left: 0px;
+		left: 3px;
 		z-index: 999;
 	}
 	.info-wrap{
