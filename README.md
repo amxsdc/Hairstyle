@@ -1,6 +1,14 @@
 前端分支--Tangyingfu---此为总目录，详细请进入小目录查看或阅读文末项目结构。
 
-**最新更新-01月30日--见文中【效果示例】之后**
+**最新更新-02月1日--见文中【效果示例】之后**
+
+0201：
+
+1、修改我的页面--添加我的资料页面初版
+
+![image](https://user-images.githubusercontent.com/81294772/151920560-b25d7a96-e67d-4257-bee7-c92fb24dbff8.png)
+![image](https://user-images.githubusercontent.com/81294772/151920586-06eb27e4-ccd6-4af8-86ad-a1ab42c8619f.png)
+
 
 0130：
 
