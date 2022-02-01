@@ -34,4 +34,4 @@ async def get_user(user_id: Union[int, str], name: Optional[str]=None):
 if __name__ == '__main__':
     # 启动服务，因为我们这个文件叫做main.py，所以要启动main的app
     # 第一个参数main:app就表示这个含义，然后是Host和port表示监听IP和端口
-    uvicorn.run("main:app", host="127.0.0.1", port=5555,)
+    uvicorn.run("main:app", host="127.0.0.1", port=5555)
