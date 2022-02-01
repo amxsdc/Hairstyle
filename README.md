@@ -4,7 +4,7 @@
 
 0201：
 
-1、修改我的页面--添加我的资料页面初版
+1、修改我的页面--添加我的资料页面初版----Server是fastAPI框架的服务端---仅用于功能测试
 
 ![image](https://user-images.githubusercontent.com/81294772/151920560-b25d7a96-e67d-4257-bee7-c92fb24dbff8.png)
 ![image](https://user-images.githubusercontent.com/81294772/151920586-06eb27e4-ccd6-4af8-86ad-a1ab42c8619f.png)
@@ -102,6 +102,8 @@ demo版0127：
 
 3D_Hair_Final为纠错版，当前未开始修改，即当完善界面优化设计（得到原型后）会在这里进行优化开发。
 当前主要维护 3D_Hair_Demo测试版本以实现功能。
+
+3D_Hair_Server是采用fastAPI框架的服务端，仅用于软件功能测试
 
 【项目结构】
 
