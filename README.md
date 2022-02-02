@@ -1,6 +1,19 @@
 前端分支--Tangyingfu---此为总目录，详细请进入小目录查看或阅读文末项目结构。
 
-**最新更新-02月1日--见文中【效果示例】之后**
+**最新更新-02月02日--见文中【效果示例】之后**
+
+0202：
+
+1、完善我的页面，加入修改密码跳转，，我的主页信息，编辑签名，修改头像页面等等，主页菜单加入点击事件
+
+![image](https://user-images.githubusercontent.com/81294772/152193361-ab42d4e6-b3c5-4c8e-8376-43c6dc2fdcd1.png)
+![image](https://user-images.githubusercontent.com/81294772/152193408-a87c1fc0-c194-47e4-a044-774f215a22ae.png)
+![image](https://user-images.githubusercontent.com/81294772/152193530-427e1f36-0fd9-4d23-bc26-ebac6e41bf3f.png)
+![image](https://user-images.githubusercontent.com/81294772/152193610-3c20a3c2-1727-418a-b219-5d3fbeabd217.png)
+![image](https://user-images.githubusercontent.com/81294772/152193716-0b0c8eac-b201-45dd-b0c6-1042f615c6bd.png)
+![image](https://user-images.githubusercontent.com/81294772/152193792-9a726966-f7b9-4a81-bdab-b31a050f71cc.png)
+
+
 
 0201：
 
