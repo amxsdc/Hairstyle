@@ -408,6 +408,7 @@
 			font-size: 16px;
 			border-style: groove;
 			width: 90%;
+			background-color: #FFFFFF;
 			-moz-box-shadow: inset 0 0 10px #CCC;
 			-webkit-box-shadow: inset 0 0 10px #CCC;
 			box-shadow: inset 0 0 10px #CCC;

@@ -1,25 +1,29 @@
 <template>
 	<view class="content">
-		<view class="title">忘记密码</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">用户名：</text>
-			<input class="userinfo" type="text" v-model="userName"  placeholder="请输入用户名" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">邮 箱：</text>
-			<input class="userinfo" type="text" v-model="userEmail" placeholder="请输入邮箱" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">新密码：</text>
-			<input class="userinfo" type="password" v-model="newpassword" placeholder="请输入新密码" />
-		</view>
-		<view class="inputcomponent">
-			<text class="hintinfo">确认密码：</text>
-			<input class="userinfo" type="password" v-model="repeatNewPassword"  placeholder="请再次输入" />
-		</view>
-		<view class="buttonSet">
-			<u-button @click="queryButton" :style="[buttonStyle]" class="button-LogReg">确认</u-button>
-			<u-button @click="cancelButton" :style="[buttonStyle]" class="button-LogReg">取消</u-button>
+		<view class="title">修改密码</view>
+		<view style="padding-top: 40upx;">
+			<view class="inputArea">
+				<input v-model="registerPhone" placeholder="请输入手机号" type="number" maxlength="11" class="inputClass" />
+			</view>
+			<view class="inputArea"> 
+				<view style="display: flex;">
+					<input type="number" maxlength="6" placeholder="验证码" class="inputClass" style="flex:3;border-radius: 22px 0 0 22px;"
+					 v-model="registerCode" />
+					<view class="inputClass" @click="getsmscode" style="flex:1;border-radius:0 22px 22px 0;border-left: none; font-size: 14px;">{{smsbtn.text}}</view>
+				</view>
+			</view>
+			<view class="inputArea">
+				<input v-model="registerPassword" placeholder="输入密码" type="password" class="inputClass" />
+			</view>
+			<view class="inputArea">
+				<input v-model="confirmPassword" placeholder="确认新密码" type="password" class="inputClass" />
+			</view>
+			<view style="padding: 0 10%;">
+				<text style="color: red;">{{message}}</text>
+			</view>
+			<view class="inputArea">
+				<button style="border-radius:22px; width: 50%; background-color: #ff5500;" @click="goRegister">确 认</button>
+			</view>
 		</view>
 	</view>
 </template>
@@ -28,79 +32,155 @@
 	export default {
 		data() {
 			return {
-				userName: '',			//用户名
-				userEmail:'',			//用户邮箱
-				newpassword:'',			//用户密码
-				repeatNewPassword:''	//用户确认密码
+				registerPhone: '',
+				registerPassword: '',
+				confirmPassword: '',
+				registerCode: '',
+				smsbtn: {
+					text: '发送',
+					status: false,
+					codeTime: 60
+				},
+				timerId: null,
+				message: ''
 			}
 		},
-		computed: {						//按钮风格
-			buttonStyle() {
-				let style = {};
-				style.color = "#fff";
-				style.backgroundColor = this.$u.color['warning'];
-				return style;
-			},
+		
+		computed: {
+			
+		},
+		
+		components: {
+			
 		},
 		methods: {
 			onLoad(){
 				
 			},
 			
-			cancelButton(){				//取消注册返回登陆界面
-				this.$u.toast("取消找回密码并返回登录界面");
-				uni.redirectTo({
-					url:"../login",
-				})
-			},
-			queryButton(){				//重置密码
-				//this指针
-				var _this=this
-				
-				//判断输入状态
-				if(this.userName==""||this.userEmail==""||this.newpassword==""||this.repeatNewPassword==""){
-					this.$u.toast("请完善信息")
-					return
-				}
-				if(this.newpassword!=this.repeatNewPassword){
-					this.$u.toast("您两次输入的密码不匹配")
-					return
-				}
-				//检验密码位数是否符合要求
-				if(this.newpassword.length!=6){
-					this.$u.toast("您的密码格式不正确，请输入6位密码");
+			getsmscode() {
+				//此处写发送验证码逻辑
+				if (this.smsbtn.codeTime != 60) {
 					return;
 				}
-				
-				//密码变量
-				uni.showModal({
-					title: '重置密码',
-					content: '确认信息无误并重置密码？',
-					success: function (res) {
-						if (res.confirm) {
-							uni.request({
-								url: '/api/forgetPassword', 
-								method:'POST',
-								//发送用户名、邮箱（验证身份）、新密码
-								data:{userName:_this.userName,regEmail:_this.userEmail,newPassword:_this.repeatNewPassword}, 
-								success: (res) => {
-									if(res.data.data.status){
-										_this.$u.toast("重置密码成功");
-										uni.redirectTo({
-											url:'../login',
-										})
-									}
-									else{
-										_this.$u.toast("重置密码失败");
-									}
-								}
-							});
-						} else if (res.cancel) {
-							_this.$u.toast("取消重置密码")
+				this.timerId = setInterval(() => {//此处直接复制了另一个插件里的计时器，在插件市场里搜索登录，时间最靠前的那位
+						let codeTime = this.smsbtn.codeTime;
+						codeTime--;
+						this.smsbtn.codeTime = codeTime;
+						this.smsbtn.text = codeTime + "S";
+						if (codeTime < 1) {
+							clearInterval(this.timerId);
+							this.smsbtn.text = "重试";
+							this.smsbtn.codeTime = 60;
+							this.smsbtn.status = false;
 						}
-					}
+					},
+					1000);
+				return false;
+			},
+			goRegister() {
+				let registerPhone = this.registerPhone;
+				let registerPassword = this.registerPassword;
+				let confirmPassword = this.confirmPassword;
+				let registerCode = this.registerCode;
+				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(registerPhone))) {
+					this.message = "手机号码有误，请重填";
+					return false;
+				}
+				if (registerCode < 100000) {
+					this.message = "验证码不符合格式";
+					return false;
+				}
+				if (!registerPassword) {
+					this.message = "密码为空";
+					return false;
+				}
+			
+				let ls = 0;
+				if (registerPassword.match(/([a-z])+/)) {
+					ls++;
+				}
+				if (registerPassword.match(/([0-9])+/)) {
+					ls++;
+				}
+				if (registerPassword.match(/([A-Z])+/)) {
+					ls++;
+				}
+				if (registerPassword.match(/[^a-zA-Z0-9]+/)) {
+					ls++;
+				}
+				if (registerPassword.length < 8) {
+					ls = 0;
+				}
+				if (ls < 2) {
+					this.message = "密码强度不够，至少8位，大写、小写、字母、符号 其中两种";
+					return false;
+				}
+			
+			
+				if (confirmPassword != registerPassword) {
+					this.message = "两次密码不同";
+					return false;
+				}
+				uni.showLoading({
+					title: '加载中···',
+					mask: false
+				});
+			
+				let headers = {};
+				headers['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+				let PHPSESSID = uni.getStorageSync('PHPSESSID');
+				if (PHPSESSID) {
+					headers['cookie'] = 'PHPSESSID=' + PHPSESSID;//将PHPSESSID放入请求头中,如你有其他cookies都可以缀后面，分号分割。浏览器端本身就有cookies机制，不设置
+				}
+				uni.request({
+					url: this.$url + '/api/login/register.php',//此处使用了全局变量拼接url（main.js文件中），关于全局变量官方问答里有
+					method: 'POST',
+					header: headers,
+					data: {
+						phone: this.registerPhone, //phone应该以后台验证码接收到的为phone，否则会造成修改后任意手机号注册漏洞，本demo不作处理
+						pw: this.registerPassword //本demo没有传输验证码，自行传输
+					},
+					success: res => {
+						console.log(res);
+						let cookies = res.cookies;
+						if (cookies) {
+							for (let i = 0; i < cookies.length; i++) {
+								if (cookies[i].name == 'PHPSESSID') {//PHPSESSID从cookies取出，放入本地储存
+									uni.setStorageSync('PHPSESSID', cookies[i].value);
+									break;
+								}
+							}
+						}
+						//返回的基本信息做本地缓存
+						let data = res.data;
+						if (data.ec === 0) {
+							uni.setStorageSync('userinfo', data.user);
+							uni.hideLoading();
+							uni.reLaunch({
+								url: '../index/indexme'
+							});
+						} else {
+							uni.removeStorageSync('userinfo');
+							this.message = data.msg;
+							uni.hideLoading();
+						}
+					},
+					fail: () => {
+						uni.hideLoading();
+						this.message = "网络连接失败";
+					},
+					complete: () => {}
 				});
 			},
+			openAgreement() {
+				uni.navigateTo({
+					url: '../login/userAgreement',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
 		},
 	};
 </script>
@@ -109,54 +189,39 @@
 	page{
 		background-color: #f0f0f0;
 	}
-	.content {					//容器
+	.content {						//父容器
 		flex-direction: column;
 		display: flex;
 		align-items: center;
 		align-content: center;
 		width: 100%;
 		height: 100%;
-		.buttonSet{				//按钮
-			flex-direction: row;
-			display: flex;
-		}
-		.inputcomponent {		//输入框设置
-			width: 50%;
-			flex-direction: row;
-			display: flex;
-			.hintinfo{
-				width: 50%;
-				margin-top: 20px;
-				font-size: 12px;
-			}
-			.userinfo{			//输入提示
-				width: 60%;
-				background-color: #FFFFFF;
-				border-radius: 3px;
-				margin-top: 20px;
-				font-size: 12px;
-				-moz-box-shadow: inset 0 0 10px #CCC;//阴影
-				-webkit-box-shadow: inset 0 0 10px #CCC;
-				box-shadow: inset 0 0 10px #CCC;
-			}
-		}
-		.button-LogReg{				//按钮集合
-			width: 40%;
-			height: 35px;
-			font-size:14px;
-			margin-top: 60px;
-		}
-		.title {					//页面标题
+		
+									//用户注册标题
+		.title {
 			margin-top: 100upx;
 			text-align: center;
 			font-size: 28px;
 			font-weight: 500;
-			margin-bottom: 100upx;
+			margin-bottom: 80upx;
 		}
-		input {
-			text-align: left;		//输入风格
-			margin-bottom: 5rpx;
-			padding-bottom: 6rpx;
+		
+		.inputArea {
+			padding: 20upx 10%;
+		}
+		
+		.inputClass {
+			border: 2px solid #ccc;
+			border-radius: 22px;
+			outline: 0;
+			padding: 8px 15px;
+			font-size: 16px;
+			border-style: groove;
+			width: 90%;
+			background-color: #FFFFFF;
+			-moz-box-shadow: inset 0 0 10px #CCC;
+			-webkit-box-shadow: inset 0 0 10px #CCC;
+			box-shadow: inset 0 0 10px #CCC;
 		}
 	}
 </style>

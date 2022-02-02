@@ -139,16 +139,16 @@
 			},
 			//点击API
 			clickAPI(i){
-				this.$u.toast("点击了"+this.APIname[i]);
+				// this.$u.toast("点击了"+this.APIname[i]);
 				if(i==0){
 					uni.navigateTo({
-						url:'',
+						url:'../mine/myData/myHomePage/myHomePage',
 					});
 					return;
 				}
 				else{
 					uni.navigateTo({
-						url:'',
+						url:'../../login_regist/login/forgetPassword/forgetPassword',
 					});
 					return;
 				}
@@ -158,7 +158,7 @@
 				this.$u.toast("点击了"+this.detailButton[index]);
 				if(index==0){
 					uni.navigateTo({
-						url:'',
+						url:'../mine/myData/myData',
 					});
 					return;
 				}

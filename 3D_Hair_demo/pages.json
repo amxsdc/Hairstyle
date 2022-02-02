@@ -104,37 +104,13 @@
 			}
         }
         ,{
-            "path" : "pages/navigate_page/mine/myComment/myComment",
-            "style" : {}
-        }
-        ,{
             "path" : "pages/navigate_page/mine/myData/myData",
             "style" : {
 				"backgroundColor":"#53ACD5"
 			}
         }
         ,{
-            "path" : "pages/navigate_page/mine/mySettings/mySettings",
-            "style" : {}
-        }
-        ,{
             "path" : "pages/login_regist/login/forgetPassword/forgetPassword",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/mySettings/basicInfo/basicInfo",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/mySettings/modifyPassword/modifyPassword",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/mySettings/modifyPotrait/modifyPotrait",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/userManage/userManage",
             "style" : {}
         }
         ,{
@@ -171,18 +147,6 @@
 					}
 				}
 			}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/myComment/editComment/editComment",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/userManage/editUserInfor/editUserInfor",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/navigate_page/mine/myComment/postComment/postComment",
-            "style" : {}
         }
         ,{
             "path" : "pages/navigate_page/hairMall/hairMall",
@@ -245,10 +209,51 @@
             }
             
         }
+        ,{
+            "path" : "pages/navigate_page/mine/myData/myHomePage/myHomePage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的主页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/navigate_page/mine/myData/myHomePage/changeHead_icon/changeHead_icon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置个人头像",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/navigate_page/mine/myData/myHomePage/mySignature/mySignature",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个性签名",
+                "enablePullDownRefresh": false,
+				
+				"app-plus":{
+					"titleNView": {
+						"buttons": [
+							{
+								"text": "保存",
+								"color":"Black",
+								// "fontSrc": "/static/post.png",
+								"fontSize": "15px",
+								"float":"right"
+							}
+						]
+					}
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "我的信息",//#f0f0f0
+		"navigationBarTitleText": "",//#f0f0f0
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
