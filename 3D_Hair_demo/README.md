@@ -1,5 +1,19 @@
 前端分支--TangYingfu---由于界面过于简陋和功能实现技术性太差，正考虑界面优化，但由于UI感太差，我先实现功能，后期继续完成界面迁移和优化。
 
+
+0202：
+
+1、完善我的页面，加入修改密码跳转，，我的主页信息，编辑签名，修改头像页面等等，主页菜单加入点击事件
+
+![image](https://user-images.githubusercontent.com/81294772/152194280-f8a118c7-76c8-4899-9485-37766458e708.png)
+![image](https://user-images.githubusercontent.com/81294772/152194339-ab888667-be17-4b65-83b7-1341414d3677.png)
+![image](https://user-images.githubusercontent.com/81294772/152194373-8cb4848a-1eb3-4c8d-b199-33bfb3183ba4.png)
+![image](https://user-images.githubusercontent.com/81294772/152194415-12d34ab3-1100-4f58-adb9-c8431fedcb60.png)
+![image](https://user-images.githubusercontent.com/81294772/152194486-af5380f0-88a3-4d27-96c6-baf1dc660ee1.png)
+![image](https://user-images.githubusercontent.com/81294772/152194540-cdeca8cc-bd4c-4f77-a140-a0bc2c0cabca.png)
+
+
+
 0201：
 
 1、修改我的页面---添加我的资料初版
